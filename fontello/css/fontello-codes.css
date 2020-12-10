@@ -1,0 +1,10 @@
+
+.icon-wallet:before { content: '\e800'; } /* '' */
+.icon-login:before { content: '\e801'; } /* '' */
+.icon-logout:before { content: '\e802'; } /* '' */
+.icon-undo:before { content: '\e804'; } /* '' */
+.icon-cog-alt:before { content: '\e805'; } /* '' */
+.icon-dollar:before { content: '\e806'; } /* '' */
+.icon-money:before { content: '\e807'; } /* '' */
+.icon-balance-scale:before { content: '\f24e'; } /* '' */
+.icon-handshake-o:before { content: '\f2b5'; } /* '' */

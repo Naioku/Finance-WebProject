@@ -1,0 +1,107 @@
+body
+{
+	/* Background pattern from Toptal Subtle Patterns */
+	/*background-color: #443425;*/
+	background-image: url("img/planting-trees-coin-pile-with-sunlight.jpg");
+	color: #ffffff;
+	font-family: 'Caveat', cursive;
+	font-weight: 500;
+	font-size: 35px;
+	margin: 0;
+}
+
+div.logo
+{
+	background-color: #665647dc;
+	font-family: 'Nerko One', cursive;
+	font-size: 60px;
+	color: #63D603;
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 97px;
+	border-top: 5px solid #dedea0cc;
+	border-bottom: 5px solid #dedea0cc;
+}
+
+.container
+{
+	background-color: #665647;
+	margin-left: auto;
+	margin-right: auto;
+	width: 920px;
+	padding: 5px 10px;
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
+	box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
+	text-align: justify;
+	border: 5px solid #665647;
+	border-radius: 10px;
+}
+
+h1.articleHeaders
+{
+	font-weight: 700;
+	font-size: 55px;
+	color: #ffffaa;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.question
+{
+	text-align: center;
+	margin-top: 25px;
+}
+
+.buttons
+{
+	width: 466px;
+	margin-top: 20px;
+	margin-left: 227px;
+	margin-right: 227px;
+	margin-bottom: 20px;
+	font-size: 45px;
+}
+
+.registerButton
+{
+	float:left;
+	width: 213px;
+	height: 129px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+	background-color: #bcbc805c;
+	border: 5px solid #dedea05c;
+	border-radius: 10px;
+	padding-top: 15px;
+}
+
+.registerButton:hover
+{
+	background-color: #cdcd905c;
+	cursor: pointer;
+	color: #fcf75f;
+}
+
+.logInButton
+{
+	float:left;
+	width: 213px;
+	height: 129px; /* 102px */
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+	background-color: #bcbc805c;
+	border: 5px solid #dedea05c;
+	border-radius: 10px;
+	padding-top: 15px; /* 42px */
+}
+
+.logInButton:hover
+{
+	background-color: #cdcd905c;
+	cursor: pointer;
+	color: #63D603;
+}
