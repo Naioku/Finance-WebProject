@@ -10,7 +10,7 @@ body
 	margin: 0;
 }
 
-div.logo
+.logo
 {
 	background-color: #665647dc;
 	font-family: 'Nerko One', cursive;
@@ -37,6 +37,8 @@ div.logo
 	border: 5px solid #665647;
 	border-radius: 10px;
 }
+
+
 
 h1.articleHeaders
 {
@@ -103,5 +105,32 @@ h1.articleHeaders
 {
 	background-color: #cdcd905c;
 	cursor: pointer;
+	color: #63D603;
+}
+
+/* Footer */
+
+.footer
+{
+	background-color: #665647dc;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	color: #63D603;
+	text-align: center;
+	font-size: 30px;
+	border-top: 5px solid #dedea0cc;
+	border-bottom: 5px solid #dedea0cc;
+}
+
+a
+{
+	color: #ffffaa;
+	text-decoration: none;
+}
+
+a:hover
+{
 	color: #63D603;
 }
