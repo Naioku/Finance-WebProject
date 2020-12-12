@@ -1,15 +1,21 @@
-/* General */
+/* General and default settings*/
 
 body
 {
 	/* Background pattern from Toptal Subtle Patterns */
-	/*background-color: #443425;*/
 	background-image: url("img/planting-trees-coin-pile-with-sunlight.jpg");
+	background-size: cover;
+	background-attachment: fixed;
 	color: #ffffff;
 	font-family: 'Caveat', cursive;
 	font-weight: 500;
 	font-size: 35px;
 	margin: 0;
+}
+
+body.userPanel
+{
+	background-image: url("img/jukenseiNoNatsu.jpg");
 }
 
 .logo
@@ -19,8 +25,8 @@ body
 	font-size: 60px;
 	color: #63D603;
 	text-align: center;
-	margin-top: 60px;
-	margin-bottom: 97px;
+	margin-top: 5vh;
+	margin-bottom: 8vh;
 	border-top: 5px solid #dedea0cc;
 	border-bottom: 5px solid #dedea0cc;
 }
@@ -36,8 +42,9 @@ body
 	-moz-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
 	box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
 	text-align: justify;
-	border: 5px solid #665647;
+	border: 5px solid #666647;
 	border-radius: 10px;
+	opacity: 0.9;
 }
 
 h1.articleHeaders
@@ -50,16 +57,46 @@ h1.articleHeaders
 	text-align: center;
 }
 
+div.buttons
+{
+	width: 466px;
+	margin-top: 20px;
+	margin-left: 227px;
+	margin-right: 227px;
+}
+
+div.buttons > a
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+div.buttons > a > div /* For all buttons */
+{
+	width: 213px;
+	height: 129px;
+	margin: 5px;
+	text-align: center;
+	font-size: 45px;
+	background-color: #bcbc805c;
+	border: 5px solid #dedea05c;
+	border-radius: 10px;
+	padding-top: 15px;
+}
+
+div.buttons > a > div:hover /* For all buttons' hovers */
+{
+	background-color: #cdcd905c;
+	cursor: pointer;
+}
+
 .footer
 {
 	/* I don't know how to make footer sticky to the bottom and not sticky when it is to close container*/
 	background-color: #665647dc;
 	width: 100%;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	z-index: -1;
-	margin-top: 97px;
+	margin-top: 8vh;
+	margin-bottom: 5vh;
 	color: #63D603;
 	text-align: center;
 	font-size: 30px;
@@ -83,7 +120,7 @@ h1.articleHeaders
 	color: #fcf75f;
 }
 
-/* Welcome site */
+/* Welcome site =================================== */
 
 .oneLineCenterText
 {
@@ -91,65 +128,24 @@ h1.articleHeaders
 	margin-top: 25px;
 }
 
-div.buttons
-{
-	width: 466px;
-	margin-top: 20px;
-	margin-left: 227px;
-	margin-right: 227px;
-	font-size: 45px;
-}
-
-div.buttons > a
-{
-	color: #ffffff;
-	text-decoration: none;
-}
-
-.registerButton,
-.logInButton
+div.buttons > a > div.registerButton,
+div.buttons > a > div.logInButton
 {
 	float:left;
 	width: 213px;
-	height: 129px;
-	margin-left: 5px;
-	margin-right: 5px;
-	text-align: center;
-	background-color: #bcbc805c;
-	border: 5px solid #dedea05c;
-	border-radius: 10px;
-	padding-top: 15px;
 }
 
 .registerButton:hover
 {
-	background-color: #cdcd905c;
-	cursor: pointer;
 	color: #fcf75f;
 }
-/*
-.logInButton
-{
-	float:left;
-	width: 213px;
-	height: 129px;
-	margin-left: 5px;
-	margin-right: 5px;
-	text-align: center;
-	background-color: #bcbc805c;
-	border: 5px solid #dedea05c;
-	border-radius: 10px;
-	padding-top: 15px;
-}
-*/
+
 .logInButton:hover
 {
-	background-color: #cdcd905c;
-	cursor: pointer;
 	color: #63D603;
 }
 
-/* Registration site */
+/* Registration and log in site =================================== */
 
 .formContainer
 {
@@ -177,7 +173,7 @@ input
 
 input[type = email]
 {
-	width: 610px; /*618.5px;*/
+	width: 610px;
 }
 
 input[type=text]:focus,
@@ -255,3 +251,54 @@ input:focus:-ms-input-placeholder
 {
     color: #777777;
 }
+
+/* Main menu ===================================== */
+span.name
+{
+	color: #63D603;
+}
+
+div.buttons > a > div > span.text /* For all button's texts */
+{
+	font-size: 35px;
+}
+
+div.buttons > a > div.incomeButton,
+div.buttons > a > div.expenseButton,
+div.buttons > a > div.settingsButton,
+div.buttons > a > div.logOutButton
+{
+	float:left;
+	width: 213px;
+}
+
+div.buttons > a > div.viewBalanceButton
+{
+	width: 446px;
+}
+
+.incomeButton:hover
+{
+	color: #63D603;
+}
+
+.expenseButton:hover
+{
+	color: #d81111;
+}
+
+.settingsButton:hover
+{
+	color: #fcf75f;
+}
+
+.logOutButton:hover
+{
+	color: #d81111;
+}
+
+.viewBalanceButton:hover
+{
+	color: #fcf75f;
+}
+
