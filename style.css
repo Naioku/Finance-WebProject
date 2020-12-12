@@ -1,3 +1,5 @@
+/* General */
+
 body
 {
 	/* Background pattern from Toptal Subtle Patterns */
@@ -29,7 +31,7 @@ body
 	margin-left: auto;
 	margin-right: auto;
 	width: 920px;
-	padding: 5px 10px;
+	padding: 25px 40px;
 	-webkit-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
 	-moz-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
 	box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
@@ -38,35 +40,74 @@ body
 	border-radius: 10px;
 }
 
-
-
 h1.articleHeaders
 {
 	font-weight: 700;
 	font-size: 55px;
 	color: #ffffaa;
-	margin-top: 20px;
+	margin-top: 0;
 	margin-bottom: 20px;
 	text-align: center;
 }
 
-.question
+.footer
+{
+	/* I don't know how to make footer sticky to the bottom and not sticky when it is to close container*/
+	background-color: #665647dc;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	margin-top: 97px;
+	color: #63D603;
+	text-align: center;
+	font-size: 30px;
+	border-top: 5px solid #dedea0cc;
+	border-bottom: 5px solid #dedea0cc;
+}
+
+.footer > a
+{
+	color: #ffffaa;
+	text-decoration: none;
+}
+
+.footer > a:hover
+{
+	color: #63D603;
+}
+
+.footer > span
+{
+	color: #fcf75f;
+}
+
+/* Welcome site */
+
+.oneLineCenterText
 {
 	text-align: center;
 	margin-top: 25px;
 }
 
-.buttons
+div.buttons
 {
 	width: 466px;
 	margin-top: 20px;
 	margin-left: 227px;
 	margin-right: 227px;
-	margin-bottom: 20px;
 	font-size: 45px;
 }
 
-.registerButton
+div.buttons > a
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.registerButton,
+.logInButton
 {
 	float:left;
 	width: 213px;
@@ -86,21 +127,21 @@ h1.articleHeaders
 	cursor: pointer;
 	color: #fcf75f;
 }
-
+/*
 .logInButton
 {
 	float:left;
 	width: 213px;
-	height: 129px; /* 102px */
+	height: 129px;
 	margin-left: 5px;
 	margin-right: 5px;
 	text-align: center;
 	background-color: #bcbc805c;
 	border: 5px solid #dedea05c;
 	border-radius: 10px;
-	padding-top: 15px; /* 42px */
+	padding-top: 15px;
 }
-
+*/
 .logInButton:hover
 {
 	background-color: #cdcd905c;
@@ -108,29 +149,109 @@ h1.articleHeaders
 	color: #63D603;
 }
 
-/* Footer */
+/* Registration site */
 
-.footer
+.formContainer
 {
-	background-color: #665647dc;
-	width: 100%;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	color: #63D603;
-	text-align: center;
+	width: 620px;
+	padding: 0 155px;
+}
+
+input
+{
+	float: left;
+	width: 300px;
+	background-color: #efefef;
+	color: #666666;
+	border: 2px solid #dddddd;
+	border-radius: 5px;
+	font-family: 'Caveat', cursive;
 	font-size: 30px;
-	border-top: 5px solid #dedea0cc;
-	border-bottom: 5px solid #dedea0cc;
+	padding: 10px;
+	box-sizing: border-box;
+	outline: none;
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
-a
+input[type = email]
 {
-	color: #ffffaa;
-	text-decoration: none;
+	width: 610px; /*618.5px;*/
 }
 
-a:hover
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus
 {
-	color: #63D603;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	border: 2px solid  #ffff99;
+	background-color: #ffffdd;
+	color: #63D603; /* letters color */
+	
+}
+
+input[type=submit]
+{
+	width: 300px;
+	background-color: #41b401;
+	color: white;
+	padding: 15px 10px;
+	margin-top: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+	margin: 30px 160px 0;
+}
+
+input[type=submit]:hover
+{
+	background-color: #63D603;
+}
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+/* Placeholder color */
+input::-webkit-input-placeholder
+{
+    color: #777777;
+}
+/* Placeholder color - on focus */
+input:focus::-webkit-input-placeholder
+{
+    color: #63D603;
+	opacity: 1; /* for Firefox */
+}
+
+/* Firefox < 19 */
+input:-moz-placeholder
+{
+    color: #63D603;
+	opacity: 1;
+}
+input:focus:-moz-placeholder
+{
+    color: #777777;
+}
+/* Firefox > 19 */
+input::-moz-placeholder
+{
+    color: #63D603;
+	opacity: 1;
+}
+input::focus:-moz-placeholder
+{
+    color: #777777;
+}
+/* Internet Explorer 10 */
+input:-ms-input-placeholder
+{
+    color: #63D603;
+}
+input:focus:-ms-input-placeholder
+{
+    color: #777777;
 }
