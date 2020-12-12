@@ -8,3 +8,4 @@ RewriteEngine on
 RewriteRule catch-your-pocket index.html
 RewriteRule registration registration.html
 RewriteRule log-in logIn.html
+RewriteRule main-menu mainMenu.html
