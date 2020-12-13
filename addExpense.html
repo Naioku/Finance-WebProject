@@ -42,53 +42,133 @@
 					
 						<div class = "textContainer">
 							<h1 class = "articleHeaders">
-								Oh! It's You! Hi, <span class = "name">[Name] [Surname] / [Login]</span> :)
+								Adding expense...
 							</h1>
-							<div class = "oneLineCenterText">What are we going to do today? What should I bring?</div>
+							<div class = "oneLineCenterText">Ok! So give me data... I'll do the rest.</div>
 						</div>
 					
 					</header>
 					
-					<div class = "buttons">
-						<a href = "add-income">
-							<div class = "incomeButton">							
-								<i class = "icon-dollar"></i><br />
-								<span class = "text">Add income</span>
+					<div class = "transferFormContainer">
+						
+						<form>
+							
+							<div class = "category">
+							
+								<fieldset class = "category">
+								
+									<legend> Category </legend>
+									
+									<div class = "columns">
+										<div><label><input type = "radio" value = "food" name = "category" checked>
+											Food
+										</label></div>
+										
+										<div><label><input type = "radio" value = "houseFlat" name = "category">
+											House/Flat
+										</label></div>
+										
+										<div><label><input type = "radio" value = "transport" name = "category">
+											Transport
+										</label></div>
+										
+										<div><label><input type = "radio" value = "telecommunication" name = "category"> 
+											Telecommunication
+										</label></div>
+										
+										<div><label><input type = "radio" value = "healthcare" name = "category">
+											Healthcare
+										</label></div>
+										
+										<div><label><input type = "radio" value = "clothes" name = "category">
+											Clothes
+										</label></div>
+									</div>
+										
+									<div class = "columns">
+										<div><label><input type = "radio" value = "hygiene" name = "category">
+											Hygiene
+										</label></div>
+										
+										<div><label><input type = "radio" value = "kids" name = "category">
+											Kids
+										</label></div>
+										
+										<div><label><input type = "radio" value = "entertainment" name = "category">
+											Entertainment
+										</label></div>
+										
+										<div><label><input type = "radio" value = "trip" name = "category">
+											Trip
+										</label></div>
+										
+										<div><label><input type = "radio" value = "schooling" name = "category">
+											Schooling
+										</label></div>
+										
+										<div><label><input type = "radio" value = "books" name = "category">
+											Books
+										</label></div>
+									</div>
+										
+									<div class = "columns">
+										<div><label><input type = "radio" value = "savings" name = "category">
+											Savings
+										</label></div>
+										
+										<div><label><input type = "radio" value = "retiring" name = "category">
+											Gold autumn - retiring
+										</label></div>
+										
+										<div><label><input type = "radio" value = "debtsPayment" name = "category">
+											Debts payment
+										</label></div>
+										
+										<div><label><input type = "radio" value = "donation" name = "category">
+											Donation
+										</label></div>
+										
+										<div><label><input type = "radio" value = "other" name = "category">
+											Other
+										</label></div>
+									</div>
+									<div style = "clear:both;"></div>
+									
+								</fieldset>
+							
 							</div>
-						</a>
-						
-						<a href = "add-expense">
-							<div class = "expenseButton">
-								<i class = "icon-money"></i><br />
-								<span class = "text">Add expense</span>
+							
+							<div class = "amountAndDate">
+							
+								<input class = "transferForm" type = "number" step = 0.01 placeholder = "amount" required>					
+								<input class = "transferForm" type = "date" required>
 							</div>
-						</a>
-						
-						<div style = "clear:both;"></div>
-						
-						<a href = "view-balance">
-							<div class = "viewBalanceButton">							
-								<i class = "icon-balance-scale"></i><br />
-								<span class = "text">View balance</span>
+							
+							<div class = "textArea">
+								
+								<textArea class = "textArea" placeholder = "comment (optional)"></textArea>								
+								
 							</div>
-						</a>
-						
-						<a href = "settings">
-							<div class = "settingsButton">							
-								<i class = "icon-cog-alt"></i><br />
-								<span class = "text">Settings</span>
+							<div style = "clear:both;"></div>
+							
+							<div class = "buttonsContainer">
+							
+								<button class = "addExpense">							
+									<i class = "icon-money"></i><br />
+									<span class = "text">Add expense</span>
+								</button>
+								
+								<a href = "main-menu">
+									<div class = "back">
+										<i class = "icon-undo"></i><br />
+										<span class = "text">Back</span>
+									</div>
+								</a>
 							</div>
-						</a>
-						
-						<a href = "log-out">
-							<div class = "logOutButton">
-								<i class = "icon-logout"></i><br />
-								<span class = "text">Log out</span>
-							</div>
-						</a>
-						
-						<div style = "clear:both;"></div>
-						
+							<div style = "clear:both;"></div>
+							
+						</form>
+					
 					</div>
 					
 				</div>
@@ -103,8 +183,8 @@
 	
 		<div class = "footer">
 			
-			<a href="https://www.freepik.com/photos/tree" target = "_blank">
-			Tree photo created by jcomp - www.freepik.com
+			<a href="https://www.pixiv.net/en/users/1736499" target = "_blank">
+			Background art <span class = "japaneseText">「受験生の夏」</span> created by <span class = "japaneseText">杉８７</span> - www.pixiv.net. Please check out the profile!
 			</a><br />
 			<span>Author: Adrian Komuda. All rights reserved &copy;</span> Thankyou for visit!
 			
