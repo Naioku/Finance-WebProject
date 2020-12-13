@@ -18,6 +18,11 @@ body.userPanel
 	background-image: url("img/jukenseiNoNatsu.jpg");
 }
 
+.japaneseText
+{
+	font-size: 20px;
+}
+
 .logo
 {
 	background-color: #665647dc;
@@ -57,7 +62,7 @@ h1.articleHeaders
 	text-align: center;
 }
 
-div.buttons
+div.buttonsContainer
 {
 	width: 466px;
 	margin-top: 20px;
@@ -65,13 +70,22 @@ div.buttons
 	margin-right: 227px;
 }
 
-div.buttons > a
+div.buttonsContainer > a
 {
 	color: #ffffff;
 	text-decoration: none;
 }
 
-div.buttons > a > div /* For all buttons */
+/* For all buttons */
+div.registerButton,
+div.logInButton,
+div.incomeButton,
+div.expenseButton,
+div.settingsButton,
+div.logOutButton,
+div.viewBalanceButton,
+button.addExpense,
+div.back
 {
 	width: 213px;
 	height: 129px;
@@ -84,7 +98,16 @@ div.buttons > a > div /* For all buttons */
 	padding-top: 15px;
 }
 
-div.buttons > a > div:hover /* For all buttons' hovers */
+/* For all buttons' hovers */
+div.registerButton:hover,
+div.logInButton:hover,
+div.incomeButton:hover,
+div.expenseButton:hover,
+div.settingsButton:hover,
+div.logOutButton:hover,
+div.viewBalanceButton:hover,
+button.addExpense:hover,
+div.back:hover
 {
 	background-color: #cdcd905c;
 	cursor: pointer;
@@ -128,8 +151,8 @@ div.buttons > a > div:hover /* For all buttons' hovers */
 	margin-top: 25px;
 }
 
-div.buttons > a > div.registerButton,
-div.buttons > a > div.logInButton
+div.registerButton,
+div.logInButton
 {
 	float:left;
 	width: 213px;
@@ -147,13 +170,13 @@ div.buttons > a > div.logInButton
 
 /* Registration and log in site =================================== */
 
-.formContainer
+div.registrationLogInForm
 {
 	width: 620px;
 	padding: 0 155px;
 }
 
-input
+input.registrationLogInForm
 {
 	float: left;
 	width: 300px;
@@ -171,14 +194,14 @@ input
 	margin-right: 5px;
 }
 
-input[type = email]
+input[type = email].registrationLogInForm
 {
 	width: 610px;
 }
 
-input[type=text]:focus,
-input[type=password]:focus,
-input[type=email]:focus
+input[type=text].registrationLogInForm:focus,
+input[type=password].registrationLogInForm:focus,
+input[type=email].registrationLogInForm:focus
 {
 	-webkit-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
 	-moz-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
@@ -189,9 +212,59 @@ input[type=email]:focus
 	
 }
 
-input[type=submit]
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+/* Placeholder color */
+input.registrationLogInForm::-webkit-input-placeholder
 {
-	width: 300px;
+    color: #777777;
+}
+
+/* Placeholder color - on focus */
+input.registrationLogInForm:focus::-webkit-input-placeholder
+{
+    color: #63D603;
+}
+
+/* Firefox < 19 */
+/* Placeholder color */
+input.registrationLogInForm:-moz-placeholder
+{
+    color: #63D603;
+}
+/* Placeholder color - on focus */
+input.registrationLogInForm:focus:-moz-placeholder
+{
+    color: #777777;
+}
+
+/* Firefox > 19 */
+/* Placeholder color */
+input.registrationLogInForm::-moz-placeholder
+{
+    color: #63D603;
+	opacity: 0.9;
+}
+/* Placeholder color - on focus */
+input.registrationLogInForm:focus::-moz-placeholder
+{
+    color: #777777;
+	opacity: 0.9;
+}
+
+/* Internet Explorer 10 */
+/* Placeholder color */
+input.registrationLogInForm:-ms-input-placeholder
+{
+    color: #63D603;
+}
+/* Placeholder color - on focus */
+input.registrationLogInForm:focus:-ms-input-placeholder
+{
+    color: #777777;
+}
+
+input[type=submit].registrationLogInForm
+{
 	background-color: #41b401;
 	color: white;
 	padding: 15px 10px;
@@ -204,75 +277,32 @@ input[type=submit]
 	margin: 30px 160px 0;
 }
 
-input[type=submit]:hover
+input[type=submit].registrationLogInForm:hover
 {
 	background-color: #63D603;
 }
 
-/* Chrome, Firefox, Opera, Safari 10.1+ */
-/* Placeholder color */
-input::-webkit-input-placeholder
-{
-    color: #777777;
-}
-/* Placeholder color - on focus */
-input:focus::-webkit-input-placeholder
-{
-    color: #63D603;
-	opacity: 1; /* for Firefox */
-}
-
-/* Firefox < 19 */
-input:-moz-placeholder
-{
-    color: #63D603;
-	opacity: 1;
-}
-input:focus:-moz-placeholder
-{
-    color: #777777;
-}
-/* Firefox > 19 */
-input::-moz-placeholder
-{
-    color: #63D603;
-	opacity: 1;
-}
-input::focus:-moz-placeholder
-{
-    color: #777777;
-}
-/* Internet Explorer 10 */
-input:-ms-input-placeholder
-{
-    color: #63D603;
-}
-input:focus:-ms-input-placeholder
-{
-    color: #777777;
-}
-
-/* Main menu ===================================== */
-span.name
+/* Main menu site ===================================== */
+span.userName
 {
 	color: #63D603;
 }
 
-div.buttons > a > div > span.text /* For all button's texts */
+span.buttonText /* For all button's texts */
 {
 	font-size: 35px;
 }
 
-div.buttons > a > div.incomeButton,
-div.buttons > a > div.expenseButton,
-div.buttons > a > div.settingsButton,
-div.buttons > a > div.logOutButton
+div.incomeButton,
+div.expenseButton,
+div.settingsButton,
+div.logOutButton
 {
 	float:left;
 	width: 213px;
 }
 
-div.buttons > a > div.viewBalanceButton
+div.viewBalanceButton
 {
 	width: 446px;
 }
@@ -294,11 +324,191 @@ div.buttons > a > div.viewBalanceButton
 
 .logOutButton:hover
 {
-	color: #d81111;
+	color: #228de9;
 }
 
 .viewBalanceButton:hover
 {
 	color: #fcf75f;
 }
+
+/* Transfer site ===================================== */
+div.transferFormContainer
+{
+	text-align: left;
+}
+
+fieldset.category
+{
+	border: 2px solid #666647;
+	border-color: #ffffaa;
+	border-radius: 10px;
+}
+
+div.columns
+{
+	float: left;
+	margin: 0 10px;
+}
+
+input[type=radio]:hover,
+div.columns > div > label:hover
+{
+	cursor: pointer;
+}
+
+div.amountAndDate
+{
+	float: left;
+	width: 300px;
+	height: 166px;
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+div.textArea
+{
+	float: left;
+	width: 600px;
+	height: 146px;
+	margin-top: 20px;
+	margin-left: 5xp;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+input.transferForm,
+textArea.textArea
+{
+	display: block;
+	width: 300px;
+	background-color: #efefef;
+	color: #666666;
+	border: 2px solid #dddddd;
+	border-radius: 5px;
+	font-family: 'Caveat', cursive;
+	font-size: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	outline: none;
+	
+}
+
+textArea.textArea
+{
+	width: 600px;
+	height: 146px;
+	resize: none;
+}
+
+input.transferForm[type=number]
+{
+	margin-bottom: 20px;
+}
+
+input[type=number].transferForm:focus,
+input[type=date].transferForm:focus,
+textArea.textArea:focus
+{
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	border: 2px solid  #ffff99;
+	background-color: #ffffdd;
+	color: #63D603; /* letters color */
+	
+}
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+/* Placeholder color */
+input.transferForm::-webkit-input-placeholder,
+textArea.textArea::-webkit-input-placeholder
+{
+    color: #777777;
+}
+/* Placeholder color - on focus */
+input.transferForm:focus::-webkit-input-placeholder,
+textArea.textArea:focus::-webkit-input-placeholder
+{
+    color: #63D603;
+}
+
+/* Firefox < 19 */
+/* Placeholder color */
+input.transferForm:-moz-placeholder,
+textArea.textArea:-moz-placeholder
+{
+    color: #63D603;
+}
+/* Placeholder color - on focus */
+input.transferForm:focus:-moz-placeholder,
+textArea.textArea:focus:-moz-placeholder
+{
+    color: #777777;
+}
+
+/* Firefox > 19 */
+/* Placeholder color */
+input.registrationLogInForm::-moz-placeholder,
+textArea.textArea::-moz-placeholder
+{
+    color: #63D603;
+}
+/* Placeholder color - on focus */
+input.transferForm::focus::-moz-placeholder,
+textArea.textArea:focus::-moz-placeholder
+{
+    color: #777777;
+}
+
+/* Internet Explorer 10 */
+/* Placeholder color */
+input.transferForm:-ms-input-placeholder,
+textArea.textArea:-ms-input-placeholder
+{
+    color: #63D603;
+}
+/* Placeholder color - on focus */
+input.transferForm:focus:-ms-input-placeholder,
+textArea.textArea:focus:-ms-input-placeholder
+{
+    color: #777777;
+}
+
+button.addExpense
+{
+	box-sizing: initial;
+	padding-left: 0;
+	padding-right: 0;
+	font-family: 'Caveat', cursive;
+	color: #ffffff;
+	display: block;
+	float: left;
+}
+
+div.back
+{
+	float:left;
+	width: 213px;
+}
+
+
+button.addExpense:hover
+{
+	color: #d81111;
+}
+
+div.back:hover
+{
+	color: #228de9;
+}
+
+
+
+
+
+
+
 
