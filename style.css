@@ -23,20 +23,26 @@ body.userPanel
 	font-size: 20px;
 }
 
-.logo
+div.logo
 {
 	background-color: #665647dc;
 	font-family: 'Nerko One', cursive;
 	font-size: 60px;
 	color: #63D603;
 	text-align: center;
-	margin-top: 5vh;
-	margin-bottom: 8vh;
+	margin-top: 4vh;
+	margin-bottom: 6.5vh;
 	border-top: 5px solid #dedea0cc;
 	border-bottom: 5px solid #dedea0cc;
 }
 
-.container
+span.logo
+{
+	color: #fcf75f; /*#ffffaa*//*#fcf75f*/
+}
+
+div.container,
+div.viewBalanceContainer
 {
 	background-color: #665647;
 	margin-left: auto;
@@ -70,13 +76,7 @@ div.buttonsContainer
 	margin-right: 227px;
 }
 
-div.buttonsContainer > a
-{
-	color: #ffffff;
-	text-decoration: none;
-}
-
-/* For all buttons */
+/* Buttons' main syle -------------------------------- */
 div.registerButton,
 div.logInButton,
 div.incomeButton,
@@ -85,7 +85,8 @@ div.settingsButton,
 div.logOutButton,
 div.viewBalanceButton,
 button.addExpense,
-div.back
+div.back,
+div.backViewBalance
 {
 	width: 213px;
 	height: 129px;
@@ -98,7 +99,6 @@ div.back
 	padding-top: 15px;
 }
 
-/* For all buttons' hovers */
 div.registerButton:hover,
 div.logInButton:hover,
 div.incomeButton:hover,
@@ -107,19 +107,124 @@ div.settingsButton:hover,
 div.logOutButton:hover,
 div.viewBalanceButton:hover,
 button.addExpense:hover,
-div.back:hover
+div.back:hover,
+div.backViewBalance:hover
 {
 	background-color: #cdcd905c;
 	cursor: pointer;
 }
+
+div.back,
+div.backViewBalance
+{
+	float:left;
+	width: 213px;
+}
+
+div.back:hover,
+div.backViewBalance:hover
+{
+	color: #228de9;
+}
+
+/* Addition to "buttons" type buttons */
+button.addExpense
+{
+	box-sizing: initial;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	font-family: 'Caveat', cursive;
+	color: #ffffff;
+	display: block;
+}
+/*----------------------------------------------------------------------*/
+/* Main Focus for the input elements ---------------------------------- */
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=date]:focus,
+textArea.textArea:focus
+{
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
+	border: 2px solid  #ffff99;
+	background-color: #ffffdd;
+	color: #63D603; /* letters color */
+	
+}
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+/* Placeholder color */
+input::-webkit-input-placeholder,
+textArea::-webkit-input-placeholder
+{
+    color: #777777;
+}
+
+/* Placeholder color - on focus */
+input:focus::-webkit-input-placeholder,
+textArea:focus::-webkit-input-placeholder
+{
+    color: #63D603;
+}
+
+/* Firefox < 19 */
+/* Placeholder color */
+input.registrationLogInForm:-moz-placeholder,
+input.transferForm:-moz-placeholder,
+textArea.textArea:-moz-placeholder
+{
+    color: #63D603;
+}
+/* Placeholder color - on focus */
+input.registrationLogInForm:focus:-moz-placeholder,
+textArea:focus:-moz-placeholder
+{
+    color: #777777;
+}
+
+/* Firefox > 19 */
+/* Placeholder color */
+input.registrationLogInForm::-moz-placeholder,
+textArea::-moz-placeholder
+{
+    color: #63D603;
+	opacity: 0.9;
+}
+/* Placeholder color - on focus */
+input.registrationLogInForm:focus::-moz-placeholder,
+textArea:focus::-moz-placeholder
+{
+    color: #777777;
+	opacity: 0.9;
+}
+
+/* Internet Explorer 10 */
+/* Placeholder color */
+input.registrationLogInForm:-ms-input-placeholder,
+textArea:-ms-input-placeholder
+{
+    color: #63D603;
+}
+/* Placeholder color - on focus */
+input.registrationLogInForm:focus:-ms-input-placeholder,
+textArea:focus:-ms-input-placeholder
+{
+    color: #777777;
+}
+
+/*-----------------------------------------------------------*/
 
 .footer
 {
 	/* I don't know how to make footer sticky to the bottom and not sticky when it is to close container*/
 	background-color: #665647dc;
 	width: 100%;
-	margin-top: 8vh;
-	margin-bottom: 5vh;
+	margin-top: 6.5vh;
+	margin-bottom: 4vh;
 	color: #63D603;
 	text-align: center;
 	font-size: 30px;
@@ -127,10 +232,15 @@ div.back:hover
 	border-bottom: 5px solid #dedea0cc;
 }
 
+a
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+
 .footer > a
 {
 	color: #ffffaa;
-	text-decoration: none;
 }
 
 .footer > a:hover
@@ -199,70 +309,6 @@ input[type = email].registrationLogInForm
 	width: 610px;
 }
 
-input[type=text].registrationLogInForm:focus,
-input[type=password].registrationLogInForm:focus,
-input[type=email].registrationLogInForm:focus
-{
-	-webkit-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
-	-moz-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
-	box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
-	border: 2px solid  #ffff99;
-	background-color: #ffffdd;
-	color: #63D603; /* letters color */
-	
-}
-
-/* Chrome, Firefox, Opera, Safari 10.1+ */
-/* Placeholder color */
-input.registrationLogInForm::-webkit-input-placeholder
-{
-    color: #777777;
-}
-
-/* Placeholder color - on focus */
-input.registrationLogInForm:focus::-webkit-input-placeholder
-{
-    color: #63D603;
-}
-
-/* Firefox < 19 */
-/* Placeholder color */
-input.registrationLogInForm:-moz-placeholder
-{
-    color: #63D603;
-}
-/* Placeholder color - on focus */
-input.registrationLogInForm:focus:-moz-placeholder
-{
-    color: #777777;
-}
-
-/* Firefox > 19 */
-/* Placeholder color */
-input.registrationLogInForm::-moz-placeholder
-{
-    color: #63D603;
-	opacity: 0.9;
-}
-/* Placeholder color - on focus */
-input.registrationLogInForm:focus::-moz-placeholder
-{
-    color: #777777;
-	opacity: 0.9;
-}
-
-/* Internet Explorer 10 */
-/* Placeholder color */
-input.registrationLogInForm:-ms-input-placeholder
-{
-    color: #63D603;
-}
-/* Placeholder color - on focus */
-input.registrationLogInForm:focus:-ms-input-placeholder
-{
-    color: #777777;
-}
-
 input[type=submit].registrationLogInForm
 {
 	background-color: #41b401;
@@ -280,6 +326,7 @@ input[type=submit].registrationLogInForm
 input[type=submit].registrationLogInForm:hover
 {
 	background-color: #63D603;
+	color: green;
 }
 
 /* Main menu site ===================================== */
@@ -340,8 +387,7 @@ div.transferFormContainer
 
 fieldset.category
 {
-	border: 2px solid #666647;
-	border-color: #ffffaa;
+	border: 2px solid #ffffaa;
 	border-radius: 10px;
 }
 
@@ -408,101 +454,187 @@ input.transferForm[type=number]
 	margin-bottom: 20px;
 }
 
-input[type=number].transferForm:focus,
-input[type=date].transferForm:focus,
-textArea.textArea:focus
-{
-	-webkit-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
-	-moz-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
-	box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
-	border: 2px solid  #ffff99;
-	background-color: #ffffdd;
-	color: #63D603; /* letters color */
-	
-}
-
-/* Chrome, Firefox, Opera, Safari 10.1+ */
-/* Placeholder color */
-input.transferForm::-webkit-input-placeholder,
-textArea.textArea::-webkit-input-placeholder
-{
-    color: #777777;
-}
-/* Placeholder color - on focus */
-input.transferForm:focus::-webkit-input-placeholder,
-textArea.textArea:focus::-webkit-input-placeholder
-{
-    color: #63D603;
-}
-
-/* Firefox < 19 */
-/* Placeholder color */
-input.transferForm:-moz-placeholder,
-textArea.textArea:-moz-placeholder
-{
-    color: #63D603;
-}
-/* Placeholder color - on focus */
-input.transferForm:focus:-moz-placeholder,
-textArea.textArea:focus:-moz-placeholder
-{
-    color: #777777;
-}
-
-/* Firefox > 19 */
-/* Placeholder color */
-input.registrationLogInForm::-moz-placeholder,
-textArea.textArea::-moz-placeholder
-{
-    color: #63D603;
-}
-/* Placeholder color - on focus */
-input.transferForm::focus::-moz-placeholder,
-textArea.textArea:focus::-moz-placeholder
-{
-    color: #777777;
-}
-
-/* Internet Explorer 10 */
-/* Placeholder color */
-input.transferForm:-ms-input-placeholder,
-textArea.textArea:-ms-input-placeholder
-{
-    color: #63D603;
-}
-/* Placeholder color - on focus */
-input.transferForm:focus:-ms-input-placeholder,
-textArea.textArea:focus:-ms-input-placeholder
-{
-    color: #777777;
-}
-
 button.addExpense
 {
-	box-sizing: initial;
-	padding-left: 0;
-	padding-right: 0;
-	font-family: 'Caveat', cursive;
-	color: #ffffff;
-	display: block;
 	float: left;
 }
-
-div.back
-{
-	float:left;
-	width: 213px;
-}
-
 
 button.addExpense:hover
 {
 	color: #d81111;
 }
 
-div.back:hover
+/* Back button stylized in general options */
+
+/* View Balance site ===================================== */
+div.viewBalanceContainer
 {
-	color: #228de9;
+	width: 1200px;
+}
+
+div.viewBalanceContent
+{
+	margin-top: 10px;
+}
+
+div.balanceContent
+{
+	float: left;
+	width: 875px;
+	margin-right: 15px;
+}
+
+div.balanceControlPanel
+{
+	float: left;
+	width: 310px;
+}
+
+div.balanceControlPanelDate
+{
+	float: left;
+	width: 300px;
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: left;
+}
+
+input.balanceControlPanel
+{
+	width: 300px;
+	background-color: #efefef;
+	color: #666666;
+	border: 2px solid #dddddd;
+	border-radius: 5px;
+	font-family: 'Caveat', cursive;
+	font-size: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	outline: none;
+}
+
+div.monthButtons
+{
+	float:left;
+	margin-bottom: 15px;
+}
+
+button.balanceControlPanel,
+button.balanceControlPanelSubmit
+{
+	width: 213px;
+	background-color: #ffffaa;
+	color: #63D603;
+	font-family: 'Caveat', cursive;
+	font-size: 30px;
+	padding: 15px 15px;
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+	display: block;
+	
+}
+
+button.balanceControlPanelSubmit
+{
+	float:left;
+	width: 77px;
+	height: 224px;
+	background-color: #41b401;
+	color: white;
+	margin-bottom: 15px;
+}
+
+button.balanceControlPanel:hover
+{
+	background-color: #fcf75f;
+	color: #63D603;
+}
+button.balanceControlPanelSubmit:hover
+{
+	background-color: #63D603;
+	color: green;
+}
+
+/* Back button stylized in general options */
+div.backViewBalance
+{
+	width: 290px;
+}
+
+table.positiveBalanceContent,
+table.negativeBalanceContent
+{
+	/*margin-left: 20px;*/
+	/*margin-right: 55px;*/
+	display: block;
+}
+
+table.positiveBalanceContent,
+table.negativeBalanceContent,
+th.amount,
+th.category,
+th.comment
+{
+	padding: 10px;
+	text-align: center;
+}
+
+th.amount
+{
+	width: 143px;
+}
+
+th.category
+{
+	width: 200px;
+}
+
+th.comment
+{
+	width: 444px;
+}
+
+thead.positiveBalanceContent,
+thead.negativeBalanceContent
+{
+	color: #ffffaa;
+}
+
+tr.positiveBalanceContentOdd
+{
+	color: #52c502;
+}
+
+tr.positiveBalanceContentEven
+{
+	color: #74e714;
+}
+
+tr.negativeBalanceContentOdd
+{
+	color: #d81111;
+}
+
+tr.negativeBalanceContentEven
+{
+	color: #fa3333;
+}
+
+div.balance
+{
+	text-align: center;
+}
+
+span.balance
+{
+	color: #63D603;
 }
 
 

@@ -10,3 +10,4 @@ RewriteRule registration registration.html
 RewriteRule log-in logIn.html
 RewriteRule main-menu mainMenu.html
 RewriteRule add-expense addExpense.html
+RewriteRule view-balance viewBalance.html
