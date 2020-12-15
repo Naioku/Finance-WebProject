@@ -1,4 +1,4 @@
-/* General and default settings*/
+/*================================ General and default settings ================================*/
 
 body
 {
@@ -253,7 +253,7 @@ a
 	color: #fcf75f;
 }
 
-/* Welcome site =================================== */
+/*================================ Welcome site ================================*/
 
 .oneLineCenterText
 {
@@ -278,7 +278,7 @@ div.logInButton
 	color: #63D603;
 }
 
-/* Registration and log in site =================================== */
+/*================================ Registration and log in site ================================*/
 
 div.registrationLogInForm
 {
@@ -329,7 +329,7 @@ input[type=submit].registrationLogInForm:hover
 	color: green;
 }
 
-/* Main menu site ===================================== */
+/*================================ Main menu site ================================*/
 span.userName
 {
 	color: #63D603;
@@ -379,7 +379,7 @@ div.viewBalanceButton
 	color: #fcf75f;
 }
 
-/* Transfer site ===================================== */
+/*================================ Transfer site ================================*/
 div.transferFormContainer
 {
 	text-align: left;
@@ -466,7 +466,7 @@ button.addExpense:hover
 
 /* Back button stylized in general options */
 
-/* View Balance site ===================================== */
+/*================================ View Balance site ================================*/
 div.viewBalanceContainer
 {
 	width: 1200px;
@@ -569,14 +569,6 @@ div.backViewBalance
 }
 
 table.positiveBalanceContent,
-table.negativeBalanceContent
-{
-	/*margin-left: 20px;*/
-	/*margin-right: 55px;*/
-	display: block;
-}
-
-table.positiveBalanceContent,
 table.negativeBalanceContent,
 th.amount,
 th.category,
@@ -584,6 +576,12 @@ th.comment
 {
 	padding: 10px;
 	text-align: center;
+}
+
+table.positiveBalanceContent,
+table.negativeBalanceContent
+{
+	display: block;
 }
 
 th.amount
