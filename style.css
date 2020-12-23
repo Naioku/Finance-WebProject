@@ -26,6 +26,8 @@ body.userPanel
 div.logo
 {
 	background-color: #665647dc;
+	width: 100%;
+	height: 76px;
 	font-family: 'Nerko One', cursive;
 	font-size: 60px;
 	color: #63D603;
@@ -218,11 +220,16 @@ textArea:focus:-ms-input-placeholder
 
 /*-----------------------------------------------------------*/
 
+.wrapper
+{
+	min-height: calc(100vh - 86px - 6.5vh - 4vh - 86px - 6.5vh - 4vh); /* form footer: - 86px - 6.5vh - 4vh; from logo: -86px - 6.5vh - 4vh */
+}
+
 .footer
 {
-	/* I don't know how to make footer sticky to the bottom and not sticky when it is to close container*/
 	background-color: #665647dc;
 	width: 100%;
+	height: 76px;
 	margin-top: 6.5vh;
 	margin-bottom: 4vh;
 	color: #63D603;
@@ -420,7 +427,7 @@ div.textArea
 	width: 600px;
 	height: 146px;
 	margin-top: 20px;
-	margin-left: 5xp;
+	margin-left: 5px;
 	margin-right: 5px;
 	margin-bottom: 10px;
 }
@@ -570,9 +577,8 @@ div.backViewBalance
 
 table.positiveBalanceContent,
 table.negativeBalanceContent,
-th.amount,
-th.category,
-th.comment
+table.positiveBalanceContent th,
+table.negativeBalanceContent th
 {
 	padding: 10px;
 	text-align: center;
