@@ -2,7 +2,6 @@
 
 body
 {
-	/* Background pattern from Toptal Subtle Patterns */
 	background-image: url("img/planting-trees-coin-pile-with-sunlight.jpg");
 	background-size: cover;
 	background-attachment: fixed;
@@ -11,6 +10,7 @@ body
 	font-weight: 500;
 	font-size: 35px;
 	margin: 0;
+	line-height: 1.25;
 }
 
 body.userPanel
@@ -26,8 +26,7 @@ body.userPanel
 div.logo
 {
 	background-color: #665647dc;
-	width: 100%;
-	height: 76px;
+	height: 86px;
 	font-family: 'Nerko One', cursive;
 	font-size: 60px;
 	color: #63D603;
@@ -40,16 +39,14 @@ div.logo
 
 span.logo
 {
-	color: #fcf75f; /*#ffffaa*//*#fcf75f*/
+	color: #fcf75f;
 }
 
-div.container,
-div.viewBalanceContainer
+div.myContainer,
+div.myViewBalanceContainer
 {
 	background-color: #665647;
-	margin-left: auto;
-	margin-right: auto;
-	width: 920px;
+	width: 1010px;
 	padding: 25px 40px;
 	-webkit-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
 	-moz-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
@@ -90,8 +87,8 @@ button.addExpense,
 div.back,
 div.backViewBalance
 {
-	width: 213px;
-	height: 129px;
+	width: 223px;
+	height: 154px;
 	margin: 5px;
 	text-align: center;
 	font-size: 45px;
@@ -120,7 +117,7 @@ div.back,
 div.backViewBalance
 {
 	float:left;
-	width: 213px;
+	width: 223px;
 }
 
 div.back:hover,
@@ -132,7 +129,6 @@ div.backViewBalance:hover
 /* Addition to "buttons" type buttons */
 button.addExpense
 {
-	box-sizing: initial;
 	padding-left: 0;
 	padding-right: 0;
 	padding-bottom: 0;
@@ -228,8 +224,7 @@ textArea:focus:-ms-input-placeholder
 .footer
 {
 	background-color: #665647dc;
-	width: 100%;
-	height: 76px;
+	height: 86px;
 	margin-top: 6.5vh;
 	margin-bottom: 4vh;
 	color: #63D603;
@@ -272,7 +267,7 @@ div.registerButton,
 div.logInButton
 {
 	float:left;
-	width: 213px;
+	width: 223px;
 }
 
 .registerButton:hover
@@ -289,7 +284,7 @@ div.logInButton
 
 div.registrationLogInForm
 {
-	width: 620px;
+	width: 930px;
 	padding: 0 155px;
 }
 
@@ -353,12 +348,12 @@ div.settingsButton,
 div.logOutButton
 {
 	float:left;
-	width: 213px;
+	width: 223px;
 }
 
 div.viewBalanceButton
 {
-	width: 446px;
+	width: 456px;
 }
 
 .incomeButton:hover
@@ -392,10 +387,26 @@ div.transferFormContainer
 	text-align: left;
 }
 
+fieldset
+{
+	padding: 15px;
+	margin: 10px 5px 0;
+}
+
+legend
+{
+	float: none;
+	width: 110px;
+	font-size: 35px;
+	padding: 0;
+	margin: 0;
+}
+
 fieldset.category
 {
 	border: 2px solid #ffffaa;
 	border-radius: 10px;
+	
 }
 
 div.columns
@@ -474,9 +485,9 @@ button.addExpense:hover
 /* Back button stylized in general options */
 
 /*================================ View Balance site ================================*/
-div.viewBalanceContainer
+div.myViewBalanceContainer
 {
-	width: 1200px;
+	width: 1290px;
 }
 
 div.viewBalanceContent
@@ -592,17 +603,17 @@ table.negativeBalanceContent
 
 th.amount
 {
-	width: 143px;
+	width: 163px;
 }
 
 th.category
 {
-	width: 200px;
+	width: 220px;
 }
 
 th.comment
 {
-	width: 444px;
+	width: 464px;
 }
 
 thead.positiveBalanceContent,
