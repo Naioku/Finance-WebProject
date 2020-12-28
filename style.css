@@ -71,8 +71,7 @@ div.buttonsContainer
 {
 	width: 466px;
 	margin-top: 20px;
-	margin-left: 227px;
-	margin-right: 227px;
+	margin: 20px auto 0;
 }
 
 /* Buttons' main syle -------------------------------- */
@@ -96,6 +95,11 @@ div.backViewBalance
 	border: 5px solid #dedea05c;
 	border-radius: 10px;
 	padding-top: 15px;
+}
+
+.buttonsContainer a
+{
+	display: block;
 }
 
 div.registerButton:hover,
@@ -136,6 +140,7 @@ button.addExpense
 	color: #ffffff;
 	display: block;
 }
+
 /*----------------------------------------------------------------------*/
 /* Main Focus for the input elements ---------------------------------- */
 input[type=text]:focus,
