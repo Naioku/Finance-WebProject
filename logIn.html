@@ -3,6 +3,8 @@
 <head>
 
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<title>Catch Your Coins</title>
 	<meta name="description" content="Catch Your every single coin!">
 	<meta name="keywords" content="money, savings, credits, new car, new game, new clothes">
@@ -10,6 +12,7 @@
 	
 	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type = "text/css">
 	<link rel="stylesheet" href="style.css" type = "text/css">
 	<link rel="stylesheet" href="fontello/css/fontello.css" type = "text/css">
 
@@ -25,8 +28,18 @@
 <body>
 
 	<header>
-		
-		<div class = "logo"><i class = "icon-wallet"></i>Catch Your <span class = "logo">Coins</span></div>
+		<div class = "container-fluid logo">
+			<div class = "logoIcon">
+				<i class = "icon-wallet"></i>
+			</div>
+			<div class = "fullLogo">
+				Catch Your <span class = "logo">Coins</span>
+			</div>
+			<div class = "shortLogo">
+				ChYr<span class = "logo">Cs</span>
+			</div>
+			<div style = "clear: both"></div>
+		</div>
 		
 	</header>
 	
@@ -38,30 +51,45 @@
 				
 				<section>
 			
-					<div class = "container">
+					<div class = "container myContainer">
+						
+						<div class = "row">
+							
+							<div class = "col-12">
 					
-						<header>
-						
-							<div class = "textContainer">
-								<h1 class = "articleHeaders">Hello my friend!</h1>
-								<div class = "oneLineCenterText">So You know our secret sign, do You? :)</div>
+								<header>
+								
+									<div class = "textContainer">
+										<h1 class = "articleHeaders">Hello my friend!</h1>
+										<div class = "oneLineCenterText">So You know our secret sign, do You? :)</div>
+									</div>
+								
+								</header>
+								
+								<div class = "row">
+								
+									<div class = "col-12">
+								
+										<div class = "registrationLogInForm">
+											
+											<form>
+												
+												<input class = "form-control registrationLogInForm" type = "text" placeholder = "login" required>
+												<input class = "form-control registrationLogInForm" type = "password" placeholder = "password" required>
+												<div style = "clear:both;"></div>
+												
+												<input class = "registrationLogInForm" type = "submit" value = "Yup! It's me!">
+												<div style = "clear:both;"></div>
+												
+											</form>
+											
+										</div>
+									
+									</div>
+								
+								</div>
+								
 							</div>
-						
-						</header>
-						
-						<div class = "registrationLogInForm">
-							
-							<form>
-								
-								<input class = "registrationLogInForm" type = "text" placeholder = "login" required>
-								<input class = "registrationLogInForm" type = "password" placeholder = "password" required>
-								<div style = "clear:both;"></div>
-								
-								<input class = "registrationLogInForm" type = "submit" value = "Yup! It's me!">
-								<div style = "clear:both;"></div>
-								
-							
-							</form>
 							
 						</div>
 						
@@ -77,16 +105,23 @@
 	
 	<footer>
 	
-		<div class = "footer">
+		<div class = "container-fluid footer">
 			
-			<a href="https://www.freepik.com/photos/tree" target = "_blank">
-			Tree photo created by jcomp - www.freepik.com
-			</a><br />
-			<span>Author: Adrian Komuda. All rights reserved &copy;</span> Thankyou for visit!
-			
+			<div class = "footerLink">
+				<a href="https://www.freepik.com/photos/tree" target = "_blank">
+					Tree photo created by jcomp - www.freepik.com
+				</a>
+			</div>
+			<br />
+			<div class = "footerAuthor"><span>Author: Adrian Komuda. All rights reserved &copy; </span></div>
+			<div class = "footerThanks">Thankyou for visit!</div>
 		
 		</div>
 	
 	</footer>
+	
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+	
+	<script src = "bootstrap/js/bootstrap.min.js"></script>
 
 </body>

@@ -2,7 +2,6 @@
 
 body
 {
-	/* Background pattern from Toptal Subtle Patterns */
 	background-image: url("img/planting-trees-coin-pile-with-sunlight.jpg");
 	background-size: cover;
 	background-attachment: fixed;
@@ -11,6 +10,7 @@ body
 	font-weight: 500;
 	font-size: 35px;
 	margin: 0;
+	line-height: 1.25;
 }
 
 body.userPanel
@@ -25,32 +25,47 @@ body.userPanel
 
 div.logo
 {
+	/*height: 86px;*/
 	background-color: #665647dc;
-	width: 100%;
-	height: 76px;
 	font-family: 'Nerko One', cursive;
 	font-size: 60px;
 	color: #63D603;
 	text-align: center;
 	margin-top: 4vh;
 	margin-bottom: 6.5vh;
+	padding: 10px;
 	border-top: 5px solid #dedea0cc;
 	border-bottom: 5px solid #dedea0cc;
+	line-height: 1;
+	
+}
+
+div.logoIcon,
+div.fullLogo,
+div.shortLogo
+{
+	display: inline-block;
+}
+
+div.shortLogo
+{
+	display: none;
 }
 
 span.logo
 {
-	color: #fcf75f; /*#ffffaa*//*#fcf75f*/
+	color: #fcf75f;
 }
 
-div.container,
-div.viewBalanceContainer
+div.myContainer,
+div.myViewBalanceContainer
 {
 	background-color: #665647;
+	width: 80%;
+	max-width: 1010px;
+	padding: 25px 40px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 920px;
-	padding: 25px 40px;
 	-webkit-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
 	-moz-box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
 	box-shadow: 3px 3px 30px 5px rgba(34,18,3,1);
@@ -72,10 +87,8 @@ h1.articleHeaders
 
 div.buttonsContainer
 {
-	width: 466px;
-	margin-top: 20px;
-	margin-left: 227px;
-	margin-right: 227px;
+	width: 486px;
+	margin: 20px auto 0;
 }
 
 /* Buttons' main syle -------------------------------- */
@@ -90,15 +103,21 @@ button.addExpense,
 div.back,
 div.backViewBalance
 {
-	width: 213px;
-	height: 129px;
+	width: 233px;
+	height: 144px;
 	margin: 5px;
 	text-align: center;
 	font-size: 45px;
 	background-color: #bcbc805c;
 	border: 5px solid #dedea05c;
 	border-radius: 10px;
-	padding-top: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.buttonsContainer a
+{
+	display: block;
 }
 
 div.registerButton:hover,
@@ -120,7 +139,7 @@ div.back,
 div.backViewBalance
 {
 	float:left;
-	width: 213px;
+	width: 223px;
 }
 
 div.back:hover,
@@ -132,7 +151,6 @@ div.backViewBalance:hover
 /* Addition to "buttons" type buttons */
 button.addExpense
 {
-	box-sizing: initial;
 	padding-left: 0;
 	padding-right: 0;
 	padding-bottom: 0;
@@ -140,7 +158,14 @@ button.addExpense
 	color: #ffffff;
 	display: block;
 }
+
 /*----------------------------------------------------------------------*/
+
+.form-control
+{
+	line-height: 1;
+}
+
 /* Main Focus for the input elements ---------------------------------- */
 input[type=text]:focus,
 input[type=password]:focus,
@@ -222,14 +247,13 @@ textArea:focus:-ms-input-placeholder
 
 .wrapper
 {
-	min-height: calc(100vh - 86px - 6.5vh - 4vh - 86px - 6.5vh - 4vh); /* form footer: - 86px - 6.5vh - 4vh; from logo: -86px - 6.5vh - 4vh */
+	min-height: calc(100vh - 93px - 6.5vh - 4vh - 84px - 6.5vh - 4vh); /* form footer: - 84px - 6.5vh - 4vh; from logo: -93px - 6.5vh - 4vh */
 }
 
 .footer
 {
 	background-color: #665647dc;
-	width: 100%;
-	height: 76px;
+	/*height: 86px;*/
 	margin-top: 6.5vh;
 	margin-bottom: 4vh;
 	color: #63D603;
@@ -245,19 +269,24 @@ a
 	text-decoration: none;
 }
 
-.footer > a
+div.footerLink > a
 {
 	color: #ffffaa;
 }
 
-.footer > a:hover
+div.footerLink > a:hover
 {
 	color: #63D603;
 }
 
-.footer > span
+div.footerAuthor
 {
 	color: #fcf75f;
+}
+
+div.footer div
+{
+	display: inline-block;
 }
 
 /*================================ Welcome site ================================*/
@@ -272,7 +301,6 @@ div.registerButton,
 div.logInButton
 {
 	float:left;
-	width: 213px;
 }
 
 .registerButton:hover
@@ -290,7 +318,9 @@ div.logInButton
 div.registrationLogInForm
 {
 	width: 620px;
-	padding: 0 155px;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 input.registrationLogInForm
@@ -318,16 +348,16 @@ input[type = email].registrationLogInForm
 
 input[type=submit].registrationLogInForm
 {
+	float: none;
+	display: block;
 	background-color: #41b401;
 	color: white;
 	padding: 15px 10px;
-	margin-top: 20px;
 	border: none;
 	border-radius: 5px;
-	cursor: pointer;
 	letter-spacing: 2px;
 	outline: none;
-	margin: 30px 160px 0;
+	margin: 30px auto 0;
 }
 
 input[type=submit].registrationLogInForm:hover
@@ -353,12 +383,12 @@ div.settingsButton,
 div.logOutButton
 {
 	float:left;
-	width: 213px;
+	width: 223px;
 }
 
 div.viewBalanceButton
 {
-	width: 446px;
+	width: 456px;
 }
 
 .incomeButton:hover
@@ -392,10 +422,31 @@ div.transferFormContainer
 	text-align: left;
 }
 
+fieldset
+{
+	padding: 15px;
+	margin-top: 10px;
+}
+
+legend
+{
+	float: none;
+	width: 110px;
+	font-size: 35px;
+	padding: 0;
+	margin: 0;
+}
+
+div.category
+{
+	padding: 0 5px;
+}
+
 fieldset.category
 {
 	border: 2px solid #ffffaa;
 	border-radius: 10px;
+	
 }
 
 div.columns
@@ -413,30 +464,25 @@ div.columns > div > label:hover
 div.amountAndDate
 {
 	float: left;
-	width: 300px;
-	height: 166px;
-	margin-top: 20px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: 10px;
+	/*width: 300px;*/
+	margin: 20px 0 10px;
+	padding: 0 5px;
 }
 
 div.textArea
 {
 	float: left;
-	width: 600px;
+	/*width: 600px;*/
 	height: 146px;
-	margin-top: 20px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: 10px;
+	margin: 20px 0 10px;
+	padding: 0 5px;
 }
 
 input.transferForm,
 textArea.textArea
 {
 	display: block;
-	width: 300px;
+	/*width: 300px;*/
 	background-color: #efefef;
 	color: #666666;
 	border: 2px solid #dddddd;
@@ -451,7 +497,7 @@ textArea.textArea
 
 textArea.textArea
 {
-	width: 600px;
+	/*width: 600px;*/
 	height: 146px;
 	resize: none;
 }
@@ -474,9 +520,9 @@ button.addExpense:hover
 /* Back button stylized in general options */
 
 /*================================ View Balance site ================================*/
-div.viewBalanceContainer
+div.myViewBalanceContainer
 {
-	width: 1200px;
+	max-width: 1290px;
 }
 
 div.viewBalanceContent
@@ -488,19 +534,25 @@ div.balanceContent
 {
 	float: left;
 	width: 875px;
-	margin-right: 15px;
+	padding-right: 15px;
 }
 
-div.balanceControlPanel
+div.balanceControlPanelRight,
+div.balanceControlPanelLeft
 {
 	float: left;
 	width: 310px;
 }
 
+div.balanceControlPanelLeft
+{
+	display: none;
+}
+
 div.balanceControlPanelDate
 {
 	float: left;
-	width: 300px;
+	/*width: 300px; - there can't be width, cause "col" in HTML will not work */
 	margin-top: 20px;
 	margin-left: 5px;
 	margin-right: 5px;
@@ -521,7 +573,7 @@ input.balanceControlPanel
 	outline: none;
 }
 
-div.monthButtons
+div.balanceControlPanelMonthYearButtons
 {
 	float:left;
 	margin-bottom: 15px;
@@ -552,7 +604,7 @@ button.balanceControlPanelSubmit
 {
 	float:left;
 	width: 77px;
-	height: 224px;
+	height: 221px;
 	background-color: #41b401;
 	color: white;
 	margin-bottom: 15px;
@@ -572,7 +624,7 @@ button.balanceControlPanelSubmit:hover
 /* Back button stylized in general options */
 div.backViewBalance
 {
-	width: 290px;
+	width: calc(100% - 10px); /* margin = 5px */
 }
 
 table.positiveBalanceContent,
@@ -592,17 +644,17 @@ table.negativeBalanceContent
 
 th.amount
 {
-	width: 143px;
+	width: 163px;
 }
 
 th.category
 {
-	width: 200px;
+	width: 220px;
 }
 
 th.comment
 {
-	width: 444px;
+	width: 464px;
 }
 
 thead.positiveBalanceContent,
@@ -641,9 +693,210 @@ span.balance
 	color: #63D603;
 }
 
+/* =========================== MEDIA =========================== */
+@media (max-width: 1613px)
+{
+	/* View balance site */
+	
+	div.balanceContent
+	{
+		display: none;
+	}
+	
+	div.balanceControlPanelRight
+	{
+		display: none;
+	}
+	
+	div.balanceControlPanelLeft
+	{
+		display: block;
+		width: 100%;
+	}
+	
+	div.balanceContent
+	{
+		padding: 0;
+	}
+	
+	div.balanceControlPanelDates
+	{
+		float: left;
+		margin-top: 20px;
+	}
+	
+	div.balanceControlPanelDate
+	{
+		min-width: 222px;
+		margin: 0;
+		padding: 0 5px;
+	}
+	
+	input.balanceControlPanel[type = date]
+	{
+		width: 100%;
+	}
+	
+	div.balanceControlPanelMonthYearButtons
+	{
+		width: 100%;
+		padding-left: 5px;
+	}
+	
+	button.balanceControlPanel
+	{
+		width: 100%;
+		margin: 10px 0 0;
+	}
+	
+	div.balanceControlPanelSubmit
+	{
+		padding-right: 5px;
+	}
+	
+	button.balanceControlPanelSubmit
+	{
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	div.backViewBalance
+	{
+		float: left;
+	}
+}
 
+@media (max-width: 991.98px)
+{
+	/* Registration and Log in site */
+	div.registrationLogInForm
+	{
+		width: 100%;
+	}
+	
+	input.registrationLogInForm,
+	input.registrationLogInForm[type = email]
+	{
+		float: none;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	/* View Balance site */
+	div.balanceContent
+	{
+		font-size: 0.5vw; /* Only for testing */
+	}
+}
 
+@media (max-width: 767.98px)
+{
+	div.myContainer,
+	div.myViewBalanceContainer
+	{
+		width: 100%;
+	}
+	
+	div.footer
+	{
+		height: auto;
+	}
+}
 
+@media (max-width: 575.98px)
+{
+	body
+	{
+		font-size: 25px;
+	}
+	
+	div.logo
+	{
+		font-size: 50px;
+	}
+	
+	h1.articleHeaders
+	{
+		font-size: 45px;
+	}
+	
+	div.fullLogo
+	{
+		display: none;
+	}
+	
+	div.shortLogo
+	{
+		display: inline-block;
+	}
+	
+	div.myContainer,
+	div.myViewBalanceContainer
+	{
+		padding: 20px 15px;
+	}
+	
+	div.registerButton,
+	div.logInButton,
+	div.incomeButton,
+	div.expenseButton,
+	div.settingsButton,
+	div.logOutButton,
+	div.viewBalanceButton,
+	button.addExpense,
+	div.back,
+	div.backViewBalance
+	{
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		height: auto;
+		font-size: 35px;
+	}
+	
+	div.buttonsContainer
+	{
+		width: 100%;
+	}
+	
+	div.icons,
+	div.iconText
+	{
+		display: inline-block;
+	}
+	
+	div.footer
+	{
+		font-size: 18px;
+	}
+	
+	span.japaneseText
+	{
+		font-size: 14px;
+	}
+	
+	/* View balance site */
+	div.balanceControlPanelMonthYearButtons
+	{
+		padding-right: 5px;
+		margin-bottom: 0;
+	}
+	
+	div.balanceControlPanelSubmit
+	{
+		padding-left: 5px;
+	}
+	
+	button.balanceControlPanelSubmit
+	{
+		height: auto;
+	}
+}
 
 
 
