@@ -167,12 +167,15 @@ button.addExpense
 }
 
 /* Main Focus for the input elements ---------------------------------- */
+/* I don't know why, but without that specyfic declarations everything (except color) stops work. Inputs type=date are needed to be declared  that way too... */
+
 input[type=text]:focus,
 input[type=password]:focus,
 input[type=email]:focus,
 input[type=number]:focus,
 input[type=date]:focus,
-textArea.textArea:focus
+textArea.textArea:focus,
+textArea.textAreaIncome:focus
 {
 	-webkit-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
 	-moz-box-shadow: 0px 0px 5px 2px rgba(204,204,204,0.9);
@@ -186,6 +189,7 @@ textArea.textArea:focus
 /* Chrome, Firefox, Opera, Safari 10.1+ */
 /* Placeholder color */
 input::-webkit-input-placeholder,
+input[type=date]:focus,
 textArea::-webkit-input-placeholder
 {
     color: #777777;
@@ -193,6 +197,7 @@ textArea::-webkit-input-placeholder
 
 /* Placeholder color - on focus */
 input:focus::-webkit-input-placeholder,
+input[type=date]:focus,
 textArea:focus::-webkit-input-placeholder
 {
     color: #63D603;
@@ -200,14 +205,15 @@ textArea:focus::-webkit-input-placeholder
 
 /* Firefox < 19 */
 /* Placeholder color */
-input.registrationLogInForm:-moz-placeholder,
-input.transferForm:-moz-placeholder,
-textArea.textArea:-moz-placeholder
+input:-moz-placeholder,
+input[type=date]:focus,
+textArea:-moz-placeholder
 {
     color: #63D603;
 }
 /* Placeholder color - on focus */
-input.registrationLogInForm:focus:-moz-placeholder,
+input:focus:-moz-placeholder,
+input[type=date]:focus,
 textArea:focus:-moz-placeholder
 {
     color: #777777;
@@ -215,14 +221,16 @@ textArea:focus:-moz-placeholder
 
 /* Firefox > 19 */
 /* Placeholder color */
-input.registrationLogInForm::-moz-placeholder,
+input::-moz-placeholder,
+input[type=date]:focus,
 textArea::-moz-placeholder
 {
     color: #63D603;
 	opacity: 0.9;
 }
 /* Placeholder color - on focus */
-input.registrationLogInForm:focus::-moz-placeholder,
+input:focus::-moz-placeholder,
+input[type=date]:focus,
 textArea:focus::-moz-placeholder
 {
     color: #777777;
@@ -231,13 +239,15 @@ textArea:focus::-moz-placeholder
 
 /* Internet Explorer 10 */
 /* Placeholder color */
-input.registrationLogInForm:-ms-input-placeholder,
+input:-ms-input-placeholder,
+input[type=date]:focus,
 textArea:-ms-input-placeholder
 {
     color: #63D603;
 }
 /* Placeholder color - on focus */
-input.registrationLogInForm:focus:-ms-input-placeholder,
+input:focus:-ms-input-placeholder,
+input[type=date]:focus,
 textArea:focus:-ms-input-placeholder
 {
     color: #777777;
@@ -437,9 +447,15 @@ legend
 	margin: 0;
 }
 
-div.category
+div.category,
+div.categoryIncome
 {
 	padding: 0 5px;
+}
+
+div.categoryIncome
+{
+	margin-bottom: 10px;
 }
 
 fieldset.category
@@ -461,7 +477,8 @@ div.columns > div > label:hover
 	cursor: pointer;
 }
 
-div.amountAndDate
+div.amountAndDate,
+div.amountAndDateIncome
 {
 	float: left;
 	/*width: 300px;*/
@@ -469,17 +486,30 @@ div.amountAndDate
 	padding: 0 5px;
 }
 
-div.textArea
+div.amountAndDateIncome
+{
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+
+div.textArea,
+div.textAreaIncome
 {
 	float: left;
 	/*width: 600px;*/
-	height: 146px;
 	margin: 20px 0 10px;
 	padding: 0 5px;
 }
 
+div.textAreaIncome
+{
+	margin-top: 10px
+}
+
 input.transferForm,
-textArea.textArea
+input.transferFormIncome,
+textArea.textArea,
+textArea.textAreaIncome
 {
 	display: block;
 	/*width: 300px;*/
@@ -495,16 +525,28 @@ textArea.textArea
 	
 }
 
-textArea.textArea
+textArea.textArea,
+textArea.textAreaIncome
 {
 	/*width: 600px;*/
 	height: 146px;
 	resize: none;
 }
 
-input.transferForm[type=number]
+textArea.textAreaIncome
+{
+	height: 80px;
+}
+
+input.transferForm[type=number],
+input.transferFormIncome[type=number]
 {
 	margin-bottom: 20px;
+}
+
+input.transferFormIncome[type=number]
+{
+	margin-bottom: 10px;
 }
 
 button.addExpense
@@ -804,6 +846,22 @@ span.balance
 	div.footer
 	{
 		height: auto;
+	}
+	
+	/* Add Income site */
+	div.textAreaIncome
+	{
+		margin-top: 20px;
+	}
+	
+	textArea.textAreaIncome
+	{
+		height: 146px;
+	}
+	
+	div.amountAndDateIncome
+	{
+		margin-top: 10px;
 	}
 }
 

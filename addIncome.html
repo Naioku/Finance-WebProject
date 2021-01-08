@@ -62,7 +62,7 @@
 								
 									<div class = "textContainer">
 										<h1 class = "articleHeaders">
-											Adding expense...
+											Adding income...
 										</h1>
 										<div class = "oneLineCenterText">Ok! So give me data... I'll do the rest.</div>
 									</div>
@@ -77,111 +77,59 @@
 											
 											<form>
 												
-												<div class = "col-12 category">
+												<div class = "col-12 col-md-7 col-lg-5" style = "float: left;">
 												
-													<fieldset class = "category">
+													<div class = "col-12 categoryIncome">
+												
+														<fieldset class = "category">
+														
+															<legend> Category </legend>
+															
+															<div class = "columns">
+															
+																<div><label><input type = "radio" value = "food" name = "category" checked>
+																	Payment
+																</label></div>
+																
+																<div><label><input type = "radio" value = "houseFlat" name = "category">
+																	Bank interests
+																</label></div>
+																
+																<div><label><input type = "radio" value = "transport" name = "category">
+																	Selling on Allegro
+																</label></div>
+																
+																<div><label><input type = "radio" value = "food" name = "category" checked>
+																	Other
+																</label></div>
+																
+															</div>
+															
+														</fieldset>
 													
-														<legend> Category </legend>
-														
-														<div class = "columns">
-															<div><label><input type = "radio" value = "food" name = "category" checked>
-																Food
-															</label></div>
-															
-															<div><label><input type = "radio" value = "houseFlat" name = "category">
-																House/Flat
-															</label></div>
-															
-															<div><label><input type = "radio" value = "transport" name = "category">
-																Transport
-															</label></div>
-															
-															<div><label><input type = "radio" value = "telecommunication" name = "category"> 
-																Telecommunication
-															</label></div>
-															
-															<div><label><input type = "radio" value = "healthcare" name = "category">
-																Healthcare
-															</label></div>
-															
-															<div><label><input type = "radio" value = "clothes" name = "category">
-																Clothes
-															</label></div>
-														</div>
-															
-														<div class = "columns">
-															<div><label><input type = "radio" value = "hygiene" name = "category">
-																Hygiene
-															</label></div>
-															
-															<div><label><input type = "radio" value = "kids" name = "category">
-																Kids
-															</label></div>
-															
-															<div><label><input type = "radio" value = "entertainment" name = "category">
-																Entertainment
-															</label></div>
-															
-															<div><label><input type = "radio" value = "trip" name = "category">
-																Trip
-															</label></div>
-															
-															<div><label><input type = "radio" value = "schooling" name = "category">
-																Schooling
-															</label></div>
-															
-															<div><label><input type = "radio" value = "books" name = "category">
-																Books
-															</label></div>
-														</div>
-															
-														<div class = "columns">
-															<div><label><input type = "radio" value = "savings" name = "category">
-																Savings
-															</label></div>
-															
-															<div><label><input type = "radio" value = "retiring" name = "category">
-																Gold autumn - retiring
-															</label></div>
-															
-															<div><label><input type = "radio" value = "debtsPayment" name = "category">
-																Debts payment
-															</label></div>
-															
-															<div><label><input type = "radio" value = "donation" name = "category">
-																Donation
-															</label></div>
-															
-															<div><label><input type = "radio" value = "other" name = "category">
-																Other
-															</label></div>
-														</div>
-														<div style = "clear:both;"></div>
-														
-													</fieldset>
-												
-												</div>
-												
-												<div class = "col-12 col-md-5 col-lg-4" style = "float:left;">
-												
-													<div class = "col-12 amountAndDate">
-														<input class = "form-control transferForm" type = "number" step = 0.01 placeholder = "amount" required>					
-														<input class = "form-control transferForm" type = "date" required>
 													</div>
-													<div style = "clear:both;"></div>
-													
-													
+												
 												</div>
 											
-												<div class = "col-12 col-md-7 col-lg-8" style = "float:left;">
+												<div class = "col-12 col-md-5 col-lg-7" style = "float: left;">
 																								
-													<div class = "col-12 textArea">
-														<textArea class = "form-control textArea" placeholder = "comment (optional)"></textArea>
+													<div class = "col-12 amountAndDateIncome">
+														<input class = "form-control transferFormIncome" type = "number" step = 0.01 placeholder = "amount" required>					
+														<input class = "form-control transferFormIncome" type = "date" required>
 													</div>
 													<div style = "clear:both;"></div>
-												
+													
+													<div class = "col-12 textAreaIncome">
+														
+														<textArea class = "form-control textAreaIncome" placeholder = "comment (optional)"></textArea>
+													
+													</div>
+													<div style = "clear:both;"></div>
+													
 												</div>
-												<div style = "clear:both;"></div>												
+												<div style = "clear:both;"></div>
+													
+												
 											
 												<div class = "col-12 buttonsContainer">
 												
