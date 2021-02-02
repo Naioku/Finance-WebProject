@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['loggedIn']))
+	{
+		header("Location: index.php");
+		exit();
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +72,28 @@
 									<div class = "textContainer">
 										<h1 class = "articleHeaders">
 											Oh! It's You! Hi,<br />
-											<span class = "userName">[Name] [Surname] / [Login]</span> :)
+											<?php
+												
+												if (isset($_SESSION['name']) && isset($_SESSION['surname']))
+												{
+													echo '<span class = "userName">'.$_SESSION['name'].' '.$_SESSION['surname'].'</span> :)';
+												}
+												else if(isset($_SESSION['name']))
+												{
+													echo '<span class = "userName">'.$_SESSION['name'].'</span> :)';
+													
+												}
+												else if(isset($_SESSION['surname']))
+												{
+													echo '<span class = "userName">'.$_SESSION['surname'].'</span> :)';
+													
+												}
+												else
+												{
+													echo '<span class = "userName">'.$_SESSION['login'].'</span> :)';
+												}
+																								
+											?>
 										</h1>
 										<div class = "oneLineCenterText">What are we going to do today? Which book should I bring?</div>
 									</div>
@@ -99,14 +129,14 @@
 												</div>
 											</a>
 											
-											<a href = "settings">
+											<a href = "settings" class = "disabled">
 												<div class = "settingsButton">							
 													<i class = "icon-cog-alt"></i><br />
 													<span class = "buttonText">Settings</span>
 												</div>
 											</a>
 											
-											<a href = "catch-your-pocket">
+											<a href = "log-out">
 												<div class = "logOutButton">
 													<i class = "icon-logout"></i><br />
 													<span class = "buttonText">Log out</span>

@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['loggedIn']))
+	{
+		header("Location: index.php");
+		exit();
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,9 +173,9 @@
 											
 												<div class = "col-12 buttonsContainer">
 												
-													<button class = "addExpense">							
+													<button class = "addIncome">							
 														<i class = "icon-money"></i><br />
-														<span class = "text">Add expense</span>
+														<span class = "text">Add income</span>
 													</button>
 													
 													<a href = "main-menu">

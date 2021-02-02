@@ -5,10 +5,12 @@ Deny from all
 </FilesMatch>
 
 RewriteEngine on
-RewriteRule catch-your-pocket index.html
-RewriteRule registration registration.html
-RewriteRule log-in logIn.html
-RewriteRule main-menu mainMenu.html
-RewriteRule add-income addIncome.html
-RewriteRule add-expense addExpense.html
-RewriteRule view-balance viewBalance.html
+RewriteRule catch-your-pocket index.php
+RewriteRule registration registration.php
+RewriteRule log-in logIn.php
+RewriteRule main-menu mainMenu.php
+RewriteRule add-income addIncome.php
+RewriteRule add-expense addExpense.php
+RewriteRule view-balance viewBalance.php
+RewriteRule log-out logOutPHPOnly.php
+RewriteRule welcome welcomeNewUser.php

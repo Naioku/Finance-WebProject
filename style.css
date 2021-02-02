@@ -3,6 +3,7 @@
 body
 {
 	background-image: url("img/planting-trees-coin-pile-with-sunlight.jpg");
+	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
 	color: #ffffff;
@@ -86,7 +87,8 @@ h1.articleHeaders
 	text-align: center;
 }
 
-div.buttonsContainer
+div.buttonsContainer,
+div.welcomeNewUserButtonsContainer
 {
 	width: 486px;
 	margin: 20px auto 0;
@@ -101,6 +103,7 @@ div.settingsButton,
 div.logOutButton,
 div.viewBalanceButton,
 button.addExpense,
+button.addIncome,
 div.back,
 div.backViewBalance
 {
@@ -116,7 +119,8 @@ div.backViewBalance
 	padding-bottom: 10px;
 }
 
-.buttonsContainer a
+.buttonsContainer a,
+.welcomeNewUserButtonsContainer a
 {
 	display: block;
 }
@@ -129,6 +133,7 @@ div.settingsButton:hover,
 div.logOutButton:hover,
 div.viewBalanceButton:hover,
 button.addExpense:hover,
+button.addIncome:hover,
 div.back:hover,
 div.backViewBalance:hover
 {
@@ -150,7 +155,8 @@ div.backViewBalance:hover
 }
 
 /* Addition to "buttons" type buttons */
-button.addExpense
+button.addExpense,
+button.addIncome
 {
 	padding-left: 0;
 	padding-right: 0;
@@ -280,6 +286,13 @@ a
 	text-decoration: none;
 }
 
+a.disabled
+{
+	color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+}
+
 div.footerLink > a
 {
 	color: #ffffaa;
@@ -344,6 +357,10 @@ nav.myNavbar a:hover
 }
 
 /*================================ Welcome site ================================*/
+.narrator
+{
+	color: #827d5a;
+}
 
 .oneLineCenterText
 {
@@ -395,6 +412,11 @@ input.registrationLogInForm
 	margin-right: 5px;
 }
 
+input#login
+{
+	width: 610px;
+}
+
 input[type = email].registrationLogInForm
 {
 	width: 610px;
@@ -418,6 +440,32 @@ input[type=submit].registrationLogInForm:hover
 {
 	background-color: #63D603;
 	color: green;
+}
+
+div.allErrorMsgsDiv
+{
+	color: #a20d0d;
+	text-align: left;
+	margin: 10px 15px;
+}
+
+div.errorMsgs
+{
+	margin-bottom: 5px;
+}
+
+div.serverErrorMsgs
+{
+	color: #ffdb58;
+	font-size: 30px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+/*================================ Welcome new user site ================================*/
+div.welcomeNewUserButtonsContainer
+{
+	width: 243px;
 }
 
 /*================================ Main menu site ================================*/
@@ -593,7 +641,8 @@ input.transferFormIncome[type=number]
 	margin-bottom: 10px;
 }
 
-button.addExpense
+button.addExpense,
+button.addIncome
 {
 	float: left;
 }
@@ -601,6 +650,11 @@ button.addExpense
 button.addExpense:hover
 {
 	color: #d81111;
+}
+
+button.addIncome:hover
+{
+	color: #63D603;
 }
 
 /* Back button stylized in general options */
@@ -858,6 +912,11 @@ span.balance
 
 @media (max-width: 991.98px)
 {
+	body.userPanel
+	{
+		background-image: url("img/jukenseiNoNatsu - trunc.jpg");
+	}
+	
 	/* Registration and Log in site */
 	div.registrationLogInForm
 	{
@@ -865,7 +924,8 @@ span.balance
 	}
 	
 	input.registrationLogInForm,
-	input.registrationLogInForm[type = email]
+	input.registrationLogInForm[type = email],
+	input#login
 	{
 		float: none;
 		width: 100%;
@@ -967,6 +1027,7 @@ span.balance
 	div.logOutButton,
 	div.viewBalanceButton,
 	button.addExpense,
+	button.addIncome,
 	div.back,
 	div.backViewBalance
 	{
@@ -978,7 +1039,8 @@ span.balance
 		font-size: 35px;
 	}
 	
-	div.buttonsContainer
+	div.buttonsContainer,
+	div.welcomeNewUserButtonsContainer
 	{
 		width: 100%;
 	}
