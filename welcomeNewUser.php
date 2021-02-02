@@ -1,3 +1,17 @@
+<?php
+	session_start();
+	
+	if(!isset($_SESSION['succeededRegistration']))
+	{
+		header("Location: index.php");
+		exit();
+	}
+	else
+	{
+		unset($_SESSION['succeededRegistration']);
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,9 +75,9 @@
 								<header>
 								
 									<div class = "textContainer">
-										<h1 class = "articleHeaders">Welcome my friend!</h1>
-										I could help You catch all YOUR coins, which from you're running out very quickly. One minute of plan equals 10 minutes of act, so if I take listing all Your incomes and expenses upon myself, You could spent more time on plannig and that means more time saved ^^. But at first we should get acquainted each other.<br />
-										<div class = "oneLineCenterText">So tell me, do You know me?</div>
+										<h1 class = "articleHeaders">Nice to meet You!</h1>
+										<div style = "text-align: justify"> I'm glad You are here... :) Your login and password, you given during the registration, are from now You're unique key. Make sure that You won't lost it and always will be able to enter inside. I'll go and prepare the necessery books, so when You will be ready just knock on the door.</div>
+										<div class = "oneLineCenterText">Let's do the first entry!</div>
 									</div>
 								
 								</header>
@@ -71,19 +85,9 @@
 								<div class = "row">
 								
 									<div class = "col-12">
-								
-										<div class = "buttonsContainer">
-											<a href = "registration">
-												<div class = "registerButton">
-													<div class = "icons">
-														<i class = "icon-handshake-o"></i><br />
-													</div>
-													<div class = "iconText">
-														No...
-													</div>
-												</div>
-											</a>
-											
+									
+										<div class = "welcomeNewUserButtonsContainer">
+										
 											<a href = "log-in">
 												<div class = "logInButton">
 													<div class = "icons">
@@ -96,9 +100,9 @@
 											</a>
 											
 											<div style = "clear:both;"></div>
-											
-										</div>
 										
+										</div>
+									
 									</div>
 									
 								</div>

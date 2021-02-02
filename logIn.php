@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	
+	if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true)
+	{
+		header("Location: mainMenu.php");
+		exit();
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +38,6 @@
 <body>
 
 	<header>
-		
 		<div class = "container-fluid logo">
 			<div class = "logoIcon">
 				<i class = "icon-wallet"></i>
@@ -61,8 +70,8 @@
 								<header>
 								
 									<div class = "textContainer">
-										<h1 class = "articleHeaders">Nice to meet You!</h1>
-										<div class = "oneLineCenterText">Please, tell me something about You :)</div>
+										<h1 class = "articleHeaders">Come in!</h1>
+										<div class = "oneLineCenterText">Use Your key, to get in! :)</div>
 									</div>
 								
 								</header>
@@ -73,33 +82,31 @@
 								
 										<div class = "registrationLogInForm">
 											
-											<form>
-											
-												<input class = "form-control registrationLogInForm" type = "text" placeholder = "name">
-												<input class = "form-control registrationLogInForm" type = "text" placeholder = "surname">
+											<form action = "logInPHPOnly.php" method = "post">
+												
+												<input class = "form-control registrationLogInForm" type = "text" placeholder = "login" name = "login" required>
+												<input class = "form-control registrationLogInForm" type = "password" placeholder = "password" name = "password" required>
 												<div style = "clear:both;"></div>
 												
-												<input class = "form-control registrationLogInForm" type = "text" placeholder = "login" required>
-												<input class = "form-control registrationLogInForm" type = "password" placeholder = "password" required>
+												<input class = "registrationLogInForm" type = "submit" value = "Yup! It's me!">
 												<div style = "clear:both;"></div>
 												
-												<input class = "form-control registrationLogInForm" type = "email" placeholder = "email" required>
-												<div style = "clear:both;"></div>
-												
-												<input class = "registrationLogInForm" type = "submit" value = "Register!">
-												<div style = "clear:both;"></div>
-												
-											
 											</form>
+											
+											<?php
+											
+												if(isset($_SESSION['logInErrorMsg'])) echo $_SESSION['logInErrorMsg'];
+											
+											?>
 											
 										</div>
 									
 									</div>
-									
+								
 								</div>
 								
 							</div>
-						
+							
 						</div>
 						
 					</div>
@@ -109,7 +116,7 @@
 			</article>
 		
 		</main>
-		
+	
 	</div>
 	
 	<footer>
@@ -128,7 +135,7 @@
 		</div>
 	
 	</footer>
-
+	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 	
 	<script src = "bootstrap/js/bootstrap.min.js"></script>

@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	
+	if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true)
+	{
+		header("Location: mainMenu.php");
+		exit();
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +38,7 @@
 <body>
 
 	<header>
+		
 		<div class = "container-fluid logo">
 			<div class = "logoIcon">
 				<i class = "icon-wallet"></i>
@@ -60,8 +71,10 @@
 								<header>
 								
 									<div class = "textContainer">
-										<h1 class = "articleHeaders">Hello my friend!</h1>
-										<div class = "oneLineCenterText">So You know our secret sign, do You? :)</div>
+										<div class = "narrator"> You're getting to a small wooden house and look on the notice board...</div>
+										<h1 class = "articleHeaders">Welcome!</h1>
+										You propably are wondering, who am I. But more important question is: "Who I could become?". I could be the part of Your memory. I could help You catch all YOUR coins, which from you're running out very quickly. One minute of plan equals 10 minutes of act, so if I take listing all Your incomes and expenses upon myself, You could spent more time on plannig and that means more time saved ^^. But at first we should get acquainted. So if You don't know who am I, enter the left door. Otherwise knock on the right door.<br />
+										<div class = "oneLineCenterText">So...?</div>
 									</div>
 								
 								</header>
@@ -70,27 +83,39 @@
 								
 									<div class = "col-12">
 								
-										<div class = "registrationLogInForm">
+										<div class = "buttonsContainer">
+											<a href = "registration">
+												<div class = "registerButton">
+													<div class = "icons">
+														<i class = "icon-handshake-o"></i><br />
+													</div>
+													<div class = "iconText">
+														Left
+													</div>
+												</div>
+											</a>
 											
-											<form>
-												
-												<input class = "form-control registrationLogInForm" type = "text" placeholder = "login" required>
-												<input class = "form-control registrationLogInForm" type = "password" placeholder = "password" required>
-												<div style = "clear:both;"></div>
-												
-												<input class = "registrationLogInForm" type = "submit" value = "Yup! It's me!">
-												<div style = "clear:both;"></div>
-												
-											</form>
+											<a href = "log-in">
+												<div class = "logInButton">
+													<div class = "icons">
+														<i class = "icon-login"></i>
+													</div>
+													<div class = "iconText">
+														Right
+													</div>
+												</div>
+											</a>
+											
+											<div style = "clear:both;"></div>
 											
 										</div>
-									
+										
 									</div>
-								
+									
 								</div>
 								
 							</div>
-							
+						
 						</div>
 						
 					</div>
