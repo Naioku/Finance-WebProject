@@ -906,6 +906,13 @@ span.balanceNeutral
 	color: #ffffaa;
 }
 
+div.balanceContentDownInfo
+{
+	display: none;
+	margin: 10px 0;
+	text-align: justify;
+}
+
 /* =========================== MEDIA =========================== */
 @media (max-width: 1613px)
 {
@@ -1365,6 +1372,11 @@ span.balanceNeutral
 	div.balanceContentDown div.viewBalanceTables
 	{
 		display: none;
+	}
+	
+	div.balanceContentDownInfo
+	{
+		display: block;
 	}
 }
 
