@@ -119,7 +119,6 @@
 													<span class = "buttonText">Add expense</span>
 												</div>
 											</a>
-											
 											<div style = "clear:both;"></div>
 											
 											<a href = "view-balance">
@@ -128,6 +127,7 @@
 													<span class = "buttonText">View balance</span>
 												</div>
 											</a>
+											<div style = "clear:both;"></div>
 											
 											<a href = "settings" class = "disabled">
 												<div class = "settingsButton">							

@@ -1,7 +1,6 @@
 <?php
 	
 	$logInErrorMsg = '<div style = "color: #a20d0d; text-align: center; margin-top: 10px;">Invalid login or password!</div>';
-	$dbConnectionErrorMsg = "Error: ".$connection->connect_errno;
 	
 	session_start();
 	
@@ -79,7 +78,7 @@
 	}
 	catch(Exception $e)
 	{
-		$_SESSION['dbConnectionErrorMsg'] = $dbConnectionErrorMsg;
+		$_SESSION['dbConnectionErrorMsg'] = "Error: ".$connection->connect_errno;
 		$_SESSION['dbConnectionErrorMsg_devInfo'] = "Developer's info: ".$e;
 	}
 	

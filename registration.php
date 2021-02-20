@@ -202,6 +202,7 @@
 	<![endif]-->
 	
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
 </head>
 <body>
 
@@ -273,7 +274,7 @@
 												>
 												<div style = "clear:both;"></div>
 												
-												<input class = "form-control registrationLogInForm" id = "login" name = "login" type = "text" placeholder = "login" value =
+												<input class = "form-control registrationLogInForm" id = "login" name = "login" type = "text" placeholder = "login" required value =
 													<?php
 														if(isset($_SESSION['regForm_login']))
 														{
@@ -283,12 +284,12 @@
 													?>
 												>
 												
-												<input class = "form-control registrationLogInForm" name = "password1" type = "password" placeholder = "password">
+												<input class = "form-control registrationLogInForm" name = "password1" type = "password" placeholder = "password" required>
 												
-												<input class = "form-control registrationLogInForm" name = "password2" type = "password" placeholder = "confirm password">
+												<input class = "form-control registrationLogInForm" name = "password2" type = "password" placeholder = "confirm password" required>
 												<div style = "clear:both;"></div>
 												
-												<input class = "form-control registrationLogInForm" name = "email" type = "email" placeholder = "email" value =
+												<input class = "form-control registrationLogInForm" name = "email" type = "email" placeholder = "email" required value =
 													<?php
 														if(isset($_SESSION['regForm_email']))
 														{
