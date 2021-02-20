@@ -1,10 +1,99 @@
 <?php
+
+	// Functions
+	function showOneColumnFromCategories($queryResultData, $startFrom, $endOn)
+	{
+		for($i = $startFrom; $i <= $endOn; $i++)
+		{
+			$row = $queryResultData->fetch_assoc();
+			echo '<div><label><input type = "radio" value = "'.$row['id'].'" name = "category">';
+			echo $row['name'];
+			echo '</label></div>';
+		}
+	}
+	
+	function showOneColumnFromPaymentMethods($queryResultData, $startFrom, $endOn)
+	{
+		for($i = $startFrom; $i <= $endOn; $i++)
+		{
+			$row = $queryResultData->fetch_assoc();
+			echo '<div><label><input type = "radio" value = "'.$row['id'].'" name = "paymentMethod">';
+			echo $row['name'];
+			echo '</label></div>';
+		}
+	}
+
+	$noCategoriesMsg = "You have no categories to show.";
+	$noPaymentMethodsMsg = "You have no payment methods to show.";
+	$addedExpenseMsg = 'Expense has been added successfully! :)';
+	$addingExpenseErrorMsg = 'Error has been occured in adding protocol.';
+	
 	session_start();
 	if(!isset($_SESSION['loggedIn']))
 	{
 		header("Location: index.php");
 		exit();
 	}
+	
+	$loggedUserId = $_SESSION['id'];
+	
+	$isAnyCategory = False;
+	
+	require_once "databaseConnect.php";
+	try
+	{
+		$connection = @new mysqli($host, $dbUser, $dbPassword, $dbName);
+		if($connection->connect_errno != 0)
+		{
+			throw new Exception(mysqli_connect_errno());
+		}
+		else
+		{
+			$query = "SELECT id, name FROM expenses_category_assigned_to_users WHERE user_id = '$loggedUserId'";
+			if($resultExpenseCategory = $connection->query($query))
+			{
+				$howManyCategories = $resultExpenseCategory->num_rows;
+				if($howManyCategories > 0)
+				{
+					$isAnyCategory = True;
+				}
+				else
+				{
+					$isAnyCategory = False;
+				}
+			}
+			else
+			{
+				throw new Exception($connection->error);
+			}
+			
+			$query = "SELECT id, name FROM payment_methods_assigned_to_users WHERE user_id = '$loggedUserId'";
+			if($resultPaymentMethods = $connection->query($query))
+			{
+				$howManyPaymentMethods = $resultPaymentMethods->num_rows;
+				if($howManyPaymentMethods > 0)
+				{
+					$isAnyPaymentMethod = True;
+				}
+				else
+				{
+					$isAnyPaymentMethod = False;
+				}
+			}
+			else
+			{
+				throw new Exception($connection->error);
+			}
+		}
+		
+		$connection->close();
+	}
+	catch(Exception $e)
+	{
+		$_SESSION['dbConnectionErrorMsg'] = "Error: ".$connection->connect_errno;
+		$_SESSION['dbConnectionErrorMsg_devInfo'] = "Developer's info: ".$e;
+	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -118,98 +207,125 @@
 								
 										<div class = "transferFormContainer">
 											
-											<form>
+											<?php
+												if(isset($_SESSION['addedTransfer']) && $_SESSION['addedTransfer'] = True)
+												{
+													echo '<div class = "successfullyAddedTransfer">';
+													echo $addedExpenseMsg;
+													echo '</div>';
+													unset($_SESSION['addedTransfer']);
+												}
+												
+												if(isset($_SESSION['addTransferErrorMsg']))
+												{
+													echo '<div class = "allErrorMsgsDiv">';
+													echo $addingExpenseErrorMsg;
+													echo '<br />';
+													echo $_SESSION['addTransferErrorMsg'];
+													echo '</div>';
+													unset($_SESSION['addTransferErrorMsg']);
+												}
+												
+												if(isset($_SESSION['dbConnectionErrorMsg']))
+												{
+													echo '<div class = "allErrorMsgsDiv">';
+													echo $addingExpenseErrorMsg;
+													echo '<br />';
+													echo $_SESSION['dbConnectionErrorMsg'];
+													echo '</div>';
+													unset($_SESSION['dbConnectionErrorMsg']);
+												}
+											?>
+											
+											<form action = "checkAndAddExpense.php" method = "post">
 												
 												<div class = "col-12 category">
 												
 													<fieldset class = "category">
 													
 														<legend> Category </legend>
-														
-														<div class = "columns">
-															<div><label><input type = "radio" value = "food" name = "category" checked>
-																Food
-															</label></div>
-															
-															<div><label><input type = "radio" value = "houseFlat" name = "category">
-																House/Flat
-															</label></div>
-															
-															<div><label><input type = "radio" value = "transport" name = "category">
-																Transport
-															</label></div>
-															
-															<div><label><input type = "radio" value = "telecommunication" name = "category"> 
-																Telecommunication
-															</label></div>
-															
-															<div><label><input type = "radio" value = "healthcare" name = "category">
-																Healthcare
-															</label></div>
-															
-															<div><label><input type = "radio" value = "clothes" name = "category">
-																Clothes
-															</label></div>
-														</div>
-															
-														<div class = "columns">
-															<div><label><input type = "radio" value = "hygiene" name = "category">
-																Hygiene
-															</label></div>
-															
-															<div><label><input type = "radio" value = "kids" name = "category">
-																Kids
-															</label></div>
-															
-															<div><label><input type = "radio" value = "entertainment" name = "category">
-																Entertainment
-															</label></div>
-															
-															<div><label><input type = "radio" value = "trip" name = "category">
-																Trip
-															</label></div>
-															
-															<div><label><input type = "radio" value = "schooling" name = "category">
-																Schooling
-															</label></div>
-															
-															<div><label><input type = "radio" value = "books" name = "category">
-																Books
-															</label></div>
-														</div>
-															
-														<div class = "columns">
-															<div><label><input type = "radio" value = "savings" name = "category">
-																Savings
-															</label></div>
-															
-															<div><label><input type = "radio" value = "retiring" name = "category">
-																Gold autumn - retiring
-															</label></div>
-															
-															<div><label><input type = "radio" value = "debtsPayment" name = "category">
-																Debts payment
-															</label></div>
-															
-															<div><label><input type = "radio" value = "donation" name = "category">
-																Donation
-															</label></div>
-															
-															<div><label><input type = "radio" value = "other" name = "category">
-																Other
-															</label></div>
-														</div>
+														<?php
+															if($isAnyCategory)
+															{
+																$firstBreakPoint = ceil($howManyCategories/3);
+																$secondBreakPoint = $firstBreakPoint * 2;
+																
+																// First column
+																// First record
+																$row = $resultExpenseCategory->fetch_assoc();
+																echo '<div class = "columns">';
+																echo '<div><label><input type = "radio" value = "'.$row['id'].'" name = "category" checked>';
+																echo $row['name'];
+																echo '</label></div>';
+																// Other records
+																showOneColumnFromCategories($resultExpenseCategory, 2, $firstBreakPoint);
+																echo '</div>';
+																
+																//Second column
+																echo '<div class = "columns">';
+																showOneColumnFromCategories($resultExpenseCategory, $firstBreakPoint+1, $secondBreakPoint);
+																echo '</div>';
+																
+																// Third column
+																echo '<div class = "columns">';
+																showOneColumnFromCategories($resultExpenseCategory, $secondBreakPoint+1, $howManyCategories);
+																echo '</div>';
+															}
+															else
+															{
+																echo $noCategoriesMsg;
+															}
+														?>
+																											
 														<div style = "clear:both;"></div>
 														
 													</fieldset>
-												
+													
+													<fieldset class = "category">
+														<legend class = "paymentMethod"> Payment method </legend>
+														<?php
+															if($isAnyPaymentMethod)
+															{
+																$firstBreakPoint = ceil($howManyPaymentMethods/3);
+																$secondBreakPoint = $firstBreakPoint * 2;
+																
+																// First column
+																// First record
+																$row = $resultPaymentMethods->fetch_assoc();
+																echo '<div class = "columns">';
+																echo '<div><label><input type = "radio" value = "'.$row['id'].'" name = "paymentMethod" checked>';
+																echo $row['name'];
+																echo '</label></div>';
+																// Other records
+																showOneColumnFromPaymentMethods($resultPaymentMethods, 2, $firstBreakPoint);
+																echo '</div>';
+																
+																//Second column
+																echo '<div class = "columns">';
+																showOneColumnFromPaymentMethods($resultPaymentMethods, $firstBreakPoint+1, $secondBreakPoint);
+																echo '</div>';
+																
+																// Third column
+																echo '<div class = "columns">';
+																showOneColumnFromPaymentMethods($resultPaymentMethods, $secondBreakPoint+1, $howManyPaymentMethods);
+																echo '</div>';
+															}
+															else
+															{
+																echo $noPaymentMethodsMsg;
+															}
+														?>
+																											
+														<div style = "clear:both;"></div>
+													</fieldset>
+													
 												</div>
 												
 												<div class = "col-12 col-md-5 col-lg-4" style = "float:left;">
 												
 													<div class = "col-12 amountAndDate">
-														<input class = "form-control transferForm" type = "number" step = 0.01 placeholder = "amount" required>					
-														<input class = "form-control transferForm" type = "date" required>
+														<input class = "form-control transferForm" type = "number" step = 0.01 placeholder = "amount" name = "amount" required>					
+														<input class = "form-control transferForm" type = "text" name = "date" placeholder = "date" onfocus = "(this.type='date')" onblur = "(this.type='text')" required>
 													</div>
 													<div style = "clear:both;"></div>
 													
@@ -219,7 +335,7 @@
 												<div class = "col-12 col-md-7 col-lg-8" style = "float:left;">
 																								
 													<div class = "col-12 textArea">
-														<textArea class = "form-control textArea" placeholder = "comment (optional)"></textArea>
+														<textArea class = "form-control textArea" placeholder = "comment (optional)" name = "comment"></textArea>
 													</div>
 													<div style = "clear:both;"></div>
 												
