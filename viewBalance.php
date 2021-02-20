@@ -459,6 +459,12 @@
 									</div>
 									<div style = "clear: both;"></div>
 									
+									<div class = "balanceContentDownInfo">
+										<div class = "narrator">
+											[If You want to see full statement turn on auto rotation and rotate Your phone.]
+										</div>
+									</div>
+									
 									<div class = "balanceContentDown">
 										<div class = "viewBalanceTables">
 											<div class = "viewBalanceTableNamesPositive">Full incomes view</div>
@@ -506,7 +512,7 @@
 												}
 											?>
 										</div>
-											
+										
 										<div class = "viewBalanceTables">
 											<div class = "viewBalanceTableNamesNegative">Full expenses view</div>
 											<?php
