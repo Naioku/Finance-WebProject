@@ -95,7 +95,11 @@
 											
 											<?php
 											
-												if(isset($_SESSION['logInErrorMsg'])) echo $_SESSION['logInErrorMsg'];
+												if(isset($_SESSION['logInErrorMsg']))
+												{
+													echo $_SESSION['logInErrorMsg'];
+													unset($_SESSION['logInErrorMsg']);
+												}
 												
 												if(isset($_SESSION['dbConnectionErrorMsg']))
 												{
@@ -103,11 +107,15 @@
 													echo $_SESSION['dbConnectionErrorMsg'];
 													echo '</div>';
 													
+													unset($_SESSION['dbConnectionErrorMsg']);
+												}
+												
+												if(isset($_SESSION['dbConnectionErrorMsg_devInfo']))
+												{
 													echo '<div class = "serverErrorMsgs">';
 													echo $_SESSION['dbConnectionErrorMsg_devInfo'];
 													echo '</div>';
-													
-													unset($_SESSION['dbConnectionErrorMsg']);
+																										
 													unset($_SESSION['dbConnectionErrorMsg_devInfo']);
 												}
 											

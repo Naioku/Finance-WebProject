@@ -61,7 +61,7 @@
 	catch(Exception $e)
 	{
 		$_SESSION['dbConnectionErrorMsg'] = "Error: ".$connection->connect_errno;
-		$_SESSION['dbConnectionErrorMsg_devInfo'] = "Developer's info: ".$e;
+		//$_SESSION['dbConnectionErrorMsg_devInfo'] = "Developer's info: ".$e;
 	}
 	
 ?>

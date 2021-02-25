@@ -15,6 +15,13 @@
 	$isAnyNotGrupedExpensesToShow = False;
 	$isAnyBalanceRecord = False;
 	
+	// Default dates - present month
+	if(!isset($_POST['dateFrom']) && !isset($_POST['dateTo']))
+	{
+		$_POST['dateFrom'] = date('Y-m-01');
+		$_POST['dateTo'] = date('Y-m-t');
+	}
+	
 	if(isset($_POST['dateFrom']) && isset($_POST['dateTo']))
 	{
 		$dateFrom = $_POST['dateFrom'];
@@ -171,7 +178,7 @@
 		catch(Exception $e)
 		{
 			$_SESSION['dbConnectionErrorMsg'] = "Error: ".$connection->connect_errno;
-			$_SESSION['dbConnectionErrorMsg_devInfo'] = "Developer's info: ".$e;
+			//$_SESSION['dbConnectionErrorMsg_devInfo'] = "Developer's info: ".$e;
 		}
 	}
 	

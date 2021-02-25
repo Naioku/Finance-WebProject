@@ -88,3 +88,35 @@ function inputPresentYearDate(dateFromInputId = "dateFrom", dateToInputId = "dat
 	document.getElementById(dateFromInputId).value = firstDayText;
 	document.getElementById(dateToInputId).value = lastDayText;
 }
+
+function returnPresentMonthFirstDay() {
+	var today = new Date();
+	var firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+	
+	var presentMonth = today.getMonth() + 1; // January is 0!
+	
+	if(presentMonth < 10) {
+		var firstDayText = today.getFullYear() + "-0" + presentMonth + "-0" + firstDay.getDate();
+	}
+	else {
+		var firstDayText = today.getFullYear() + "-" + presentMonth + "-0" + firstDay.getDate();
+	}
+	alert(firstDateText);
+	return firstDatText;
+}
+
+function returnPresentMonthLastDay() {
+	var today = new Date();
+	var lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0); // January is 0!
+	
+	var presentMonth = today.getMonth() + 1; // January is 0!
+	
+	if(presentMonth < 10) {
+		var lastDayText = today.getFullYear() + "-0" + presentMonth + "-" + lastDay.getDate();
+	}
+	else {
+		var lastDayText = today.getFullYear() + "-" + presentMonth + "-" + lastDay.getDate();
+	}
+	
+	return lastDatText;
+}
