@@ -501,7 +501,7 @@ div.viewBalanceButton
 
 .expenseButton:hover
 {
-	color: #d81111;
+	color: #ff5e12;
 }
 
 .settingsButton:hover
@@ -659,7 +659,7 @@ button.addIncome
 
 button.addExpense:hover
 {
-	color: #d81111;
+	color: #ff5e12;
 }
 
 button.addIncome:hover
@@ -822,7 +822,7 @@ div.viewBalanceTableNamesPositive
 div.viewBalanceTableNamesNegative
 {
 	font-weight: bold;
-	color: #d81111;
+	color: #ff5e12;
 }
 
 table.positiveBalanceContent,
@@ -878,12 +878,12 @@ tr.positiveBalanceContentEven
 
 tr.negativeBalanceContentOdd
 {
-	color: #d81111;
+	color: #ff5e12;
 }
 
 tr.negativeBalanceContentEven
 {
-	color: #fa3333;
+	color: #ff713a;
 }
 
 div.balance
@@ -898,7 +898,7 @@ span.balancePositive
 
 span.balanceNegative
 {
-	color: #d81111;
+	color: #ff5e12;
 }
 
 span.balanceNeutral

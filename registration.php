@@ -170,7 +170,7 @@
 		catch(Exception $e)
 		{
 			$_SESSION['dbConnectionErrorMsg'] = $dbConnectionErrorMsg;
-			$_SESSION['dbConnectionErrorMsg_devInfo'] = "Developer's info: ".$e;
+			//$_SESSION['dbConnectionErrorMsg_devInfo'] = "Developer's info: ".$e;
 		}		
 	}
 ?>
@@ -335,11 +335,15 @@
 														echo $_SESSION['dbConnectionErrorMsg'];
 														echo '</div>';
 														
+														unset($_SESSION['dbConnectionErrorMsg']);
+													}
+													
+													if(isset($_SESSION['dbConnectionErrorMsg_devInfo']))
+													{
 														echo '<div class = "serverErrorMsgs">';
 														echo $_SESSION['dbConnectionErrorMsg_devInfo'];
 														echo '</div>';
-														
-														unset($_SESSION['dbConnectionErrorMsg']);
+																												
 														unset($_SESSION['dbConnectionErrorMsg_devInfo']);
 													}
 													
